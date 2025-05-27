@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Challenge is Ready to Use - Neocapital</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #fffbeb;
+      padding: 40px 20px;
+    }
+
+    .email-container {
+      max-width: 650px;
+      margin: 0 auto;
+      background: #111111;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.2);
+    }
+
+    .top-header {
+      background-color: #000000;
+      padding: 15px 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .top-header img {
+      max-width: 120px;
+      height: auto;
+    }
+
+    .hero-section {
+      background-color: #1a1a1a;
+      padding: 30px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-section h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #f59e0b;
+      font-weight: 700;
+    }
+
+    .hero-section p {
+      font-size: 15px;
+      line-height: 1.5;
+      max-width: 450px;
+      margin: 0 auto;
+      color: #fef3c7;
+    }
+
+    .content {
+      padding: 30px 25px;
+      position: relative;
+    }
+
+    .notification-icon {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .notification-icon svg {
+      width: 40px;
+      height: 40px;
+      fill: #f59e0b;
+    }
+
+    .notification-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(17, 17, 17, 0.9);
+      border-radius: 10px;
+      padding: 25px 20px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .notification-card h2 {
+      color: white;
+      font-size: 20px;
+      margin-bottom: 15px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+      text-align: center;
+    }
+
+    .notification-message {
+      color: white;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(245, 158, 11, 0.1);
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: #fcd34d;
+      font-weight: 500;
+      font-size: 14px;
+      width: 40%;
+      padding-right: 15px;
+    }
+
+    .info-value {
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+      background-color: rgba(245, 158, 11, 0.1);
+      padding: 8px 12px;
+      border-radius: 4px;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      word-break: break-word;
+      width: 60%;
+      flex-grow: 1;
+    }
+
+    .action-button {
+      display: block;
+      background-color: #f59e0b;
+      color: black;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      margin: 20px auto 10px;
+      max-width: 250px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(245, 158, 11, 0.3);
+    }
+
+    .action-button:hover {
+      background-color: #d97706;
+    }
+
+    .footer {
+      background-color: #000000;
+      padding: 20px;
+      text-align: center;
+      color: #fcd34d;
+      font-size: 13px;
+      border-top: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .social-links {
+      margin: 12px 0;
+    }
+
+    .social-links a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-color: rgba(245, 158, 11, 0.15);
+      border-radius: 50%;
+      margin: 0 5px;
+      line-height: 30px;
+      color: #fcd34d;
+      text-align: center;
+    }
+
+    .social-icon {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 480px) {
+      .email-container {
+        border-radius: 10px;
+      }
+
+      .top-header img {
+        max-width: 100px;
+      }
+
+      .hero-section h1 {
+        font-size: 20px;
+      }
+
+      .hero-section p {
+        font-size: 14px;
+      }
+
+      .notification-card {
+        padding: 20px 15px;
+      }
+
+      .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .info-label {
+        width: 100%;
+        margin-bottom: 6px;
+      }
+
+      .info-value {
+        width: 100%;
+      }
+
+      .action-button {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="email-container">
+    <div class="top-header">
+      <img src="{{ $('Global Constants').item.json.constants.IMAGE_URL}}" alt="Neocapital Logo">
+    </div>
+
+    <div class="hero-section">
+      <h1>Your Challenge is Ready to Use</h1>
+      <p>We have configured your challenge and you can now start trading. Here are your access credentials.</p>
+    </div>
+
+    <div class="content">
+      <div class="notification-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path
+            d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zm-30.7 258.7L158.6 368l30.2 30.2L256 330.9l67.2 67.2 30.2-30.2-97.9-97.9-30.2 30.7zm4.9-117.9v29l22.8-22.8 22.8 22.8v-29h38.9v-30.8h-38.9l-22.8-22.8-22.8 22.8h-38.9v30.8h38.9z" />
+        </svg>
+      </div>
+
+      <div class="notification-card">
+        <h2>Access Credentials</h2>
+
+        <div class="notification-message">
+          <p>Use these credentials to log in to the trading platform and start your challenge.</p>
+        </div>
+
+        <div class="info-item">
+          <span class="info-label">Login</span>
+          <span class="info-value">{{ $('obtener broker disponible').item.json.data[0].login }}</span>
+        </div>
+
+        <div class="info-item">
+          <span class="info-label">Password</span>
+          <span class="info-value">{{ $('obtener broker disponible').item.json.data[0].password }}</span>
+        </div>
+
+        <div class="info-item">
+          <span class="info-label">Server</span>
+          <span class="info-value">{{ $('obtener broker disponible').item.json.data[0].server }}</span>
+        </div>
+
+        <div class="info-item">
+          <span class="info-label">Platform</span>
+          <span class="info-value">{{ $('obtener broker disponible').item.json.data[0].platform }}</span>
+        </div>
+      </div>
+
+      <p style="color: white; text-align: center; margin-bottom: 15px; font-size: 14px;">To see more details about your
+        challenge and begin trading, please log in to your dashboard.</p>
+
+      <a href="{{ $('Global Constants').item.json.constants.WEBAPP_URL}}" target="_blank" class="action-button">VIEW
+        DASHBOARD</a>
+    </div>
+
+    <div class="footer">
+      <p>© 2025 Neocapital - All rights reserved</p>
+      <div class="social-links">
+        <a href="#">
+          <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
+        </a>
+        <a href="#">
+          <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter">
+        </a>
+        <a href="#">
+          <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+        </a>
+      </div>
+      <p>If you have any questions, contact us at <a href="mailto:{{ $('Global Constants').item.json.constants.EMAIL }}"
+          style="color: #f59e0b; text-decoration: none;">{{ $('Global Constants').item.json.constants.EMAIL }}</a></p>
+    </div>
+  </div>
+</body>
+
+</html>

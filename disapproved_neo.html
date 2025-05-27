@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificación de Challenge No Aprobado</title>
+  <style>
+    .email-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      border: 1px solid #dddddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header img {
+      max-width: 120px; /* Reducido de 150px a 120px */
+      height: auto; /* Asegura proporción correcta */
+      width: auto; /* Controla el ancho automáticamente */
+    }
+    .content {
+      font-size: 18px;
+      color: #333333;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .content a {
+      display: inline-block;
+      background-color: #cc0000;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .content a:hover {
+      background-color: #990000;
+    }
+    
+    .details {
+      text-align: left;
+      margin: 20px 0;
+    }
+    
+    .details li {
+      margin-bottom: 8px;
+    }
+    
+    .reasons-section {
+      background-color: #fff8f8;
+      border-left: 4px solid #cc0000;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: left;
+    }
+    
+    .reasons-section h3 {
+      color: #cc0000;
+      margin-top: 0;
+    }
+    
+    .reasons-section ul {
+      padding-left: 20px;
+    }
+    
+    .coupon {
+      background-color: #f8f8f8;
+      border: 2px dashed #cc0000;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 25px auto;
+      max-width: 80%;
+      text-align: center;
+    }
+    
+    .coupon-code {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #cc0000;
+      margin: 10px 0;
+    }
+    
+    .coupon-info {
+      font-size: 16px;
+      margin: 8px 0;
+    }
+    
+    .highlight {
+      background-color: #ffffcc;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <img src="https://neocapitalfunding.com/wp-content/uploads/2025/01/icono-1.png" alt="Logo">
+    </div>
+    <div class="content">
+      <p style="font-size: 26px; font-weight: bold;">Challenge No Aprobado</p>
+      <p>Lamentamos informarte que no has superado el challenge.</p>
+      <p>A continuación, te mostramos algunos detalles:</p>
+      <ul class="details">
+        <li><strong>ID del Challenge:</strong> {{ $('Obtener Challenge').item.json.data.documentId }}</li>
+        <li><strong>Fecha de inicio:</strong> {{ new Date($('Obtener Challenge').item.json.data.startDate).toLocaleDateString('es-ES') }}</li>
+        <li><strong>Fecha de finalización:</strong> {{ new Date($('Obtener Challenge').item.json.data.endDate).toLocaleDateString('es-ES') }}</li>
+        <li><strong>Fase: {{ $('Obtener Challenge').item.json.data.phase }}</strong></li>
+      </ul>
+      
+      <!-- Nueva sección para mostrar las razones del desapruebo -->
+      <div class="reasons-section">
+        <h3>Motivos de desaprobación:</h3>
+        <ul>
+          <li>{{ $('When Executed by Another Workflow').item.json.data.reasons[0] }}</li>
+          {{ $('When Executed by Another Workflow').item.json.data.reasons[1] ? '<li>' + $('When Executed by Another Workflow').item.json.data.reasons[1] + '</li>' : '' }}
+          {{ $('When Executed by Another Workflow').item.json.data.reasons[2] ? '<li>' + $('When Executed by Another Workflow').item.json.data.reasons[2] + '</li>' : '' }}
+        </ul>
+      </div>
+      
+      <p>Sin embargo, queremos ofrecerte una <strong>nueva oportunidad</strong> para este mismo challenge con un descuento especial.</p>
+      
+      <div class="coupon">
+        <p><strong>CUPÓN DE DESCUENTO</strong></p>
+        <p class="coupon-code">{{ $json.code }}</p>
+        <p class="coupon-info">Descuento: 
+          <span class="highlight">{{ $json.amount }}
+          </span>
+        </p>
+        <p class="coupon-info">Válido hasta: 
+          <span class="highlight">
+            {{ new Date($('fecha expiracion cupon').item.json.fechaExpiracionTicket).toLocaleDateString('es-ES') }}
+          </span>
+        </p>
+        <p class="coupon-info">Para el challenge: <span class="highlight">{{ $('Obtener producto').item.json.line_items[0].name }}</span></p>
+      </div>
+      
+      <p>Para aplicar este descuento y volver a intentarlo, por favor visita tu dashboard.</p>
+      <p><a href="https://web.neocapitalfunding.com/" target="_blank">Ver Dashboard</a></p>
+    </div>
+  </div>
+</body>
+</html>

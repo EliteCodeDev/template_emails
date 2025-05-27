@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Not Approved - ZevenGlobal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: #f0f5ff;
+            padding: 40px 20px;
+        }
+        
+        .email-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #0a1a35;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 65, 158, 0.2);
+        }
+        
+        .top-header {
+            background-color: #0a1730;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(100, 150, 255, 0.2);
+        }
+        
+        .top-header img {
+            max-width: 120px;
+            height: auto;
+        }
+        
+        .hero-section {
+            background-color: #101f3d;
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-section h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #e74c3c;
+            font-weight: 700;
+        }
+        
+        .hero-section p {
+            font-size: 15px;
+            line-height: 1.5;
+            max-width: 450px;
+            margin: 0 auto;
+            color: #b4c9ff;
+        }
+        
+        .content {
+            padding: 30px 25px;
+            position: relative;
+        }
+        
+        .notification-icon {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .notification-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #e74c3c;
+        }
+        
+        .notification-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(18, 37, 73, 0.9);
+            border-radius: 10px;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .notification-card h2 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(231, 76, 60, 0.2);
+            text-align: center;
+        }
+        
+        .notification-message {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(100, 150, 255, 0.1);
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            color: #7e9bff;
+            font-weight: 500;
+            font-size: 14px;
+            width: 40%;
+            padding-right: 15px;
+        }
+        
+        .info-value {
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            background-color: rgba(231, 76, 60, 0.1);
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(231, 76, 60, 0.2);
+            word-break: break-word;
+            width: 60%;
+            flex-grow: 1;
+        }
+        
+        .action-button {
+            display: block;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            margin: 20px auto 10px;
+            max-width: 250px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+        }
+        
+        .action-button:hover {
+            background-color: #c0392b;
+        }
+        
+        .footer {
+            background-color: #0a1730;
+            padding: 20px;
+            text-align: center;
+            color: #7e9bff;
+            font-size: 13px;
+            border-top: 1px solid rgba(100, 150, 255, 0.2);
+        }
+        
+        .social-links {
+            margin: 12px 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(100, 150, 255, 0.15);
+            border-radius: 50%;
+            margin: 0 5px;
+            line-height: 30px;
+            color: #7e9bff;
+            text-align: center;
+        }
+        
+        .social-icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+        
+        @media (max-width: 480px) {
+            .email-container {
+                border-radius: 10px;
+            }
+            
+            .top-header img {
+                max-width: 100px;
+            }
+            
+            .hero-section h1 {
+                font-size: 20px;
+            }
+            
+            .hero-section p {
+                font-size: 14px;
+            }
+            
+            .notification-card {
+                padding: 20px 15px;
+            }
+            
+            .info-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .info-label {
+                width: 100%;
+                margin-bottom: 6px;
+            }
+            
+            .info-value {
+                width: 100%;
+            }
+            
+            .action-button {
+                width: 100%;
+                padding: 12px 15px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="top-header">
+            <img src="{{ $('Global Constants').item.json.constants.IMAGE_URL}}" alt="ZevenGlobal Logo">
+        </div>
+        
+        <div class="hero-section">
+            <h1>Challenge Not Approved</h1>
+            <p>We regret to inform you that you did not meet the challenge criteria.</p>
+        </div>
+        
+        <div class="content">
+            <div class="notification-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm0 319.91a20 20 0 1 1 20-20 20 20 0 0 1-20 20zm21.72-201.15l-5.74 122a16 16 0 0 1-32 0l-5.74-121.94v-.05a21.74 21.74 0 1 1 43.44 0z"/>
+                </svg>
+            </div>
+            
+            <div class="notification-card">
+                <h2>Challenge Details</h2>
+                
+                <div class="notification-message">
+                    <p>We have reviewed your performance and unfortunately it does not meet the required parameters for passing the challenge.</p>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">Challenge ID</span>
+                    <span class="info-value">{{ $('Obtener Challenge').item.json.data.documentId }}</span>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">Start Date</span>
+                    <span class="info-value">{{ new Date($('Obtener Challenge').item.json.data.startDate).toLocaleDateString('es-ES') }}</span>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">End Date</span>
+                    <span class="info-value">{{ new Date($('Obtener Challenge').item.json.data.endDate).toLocaleDateString('es-ES') }}</span>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">Phase</span>
+                    <span class="info-value">{{ $('Obtener Challenge').item.json.data.phase }}</span>
+                </div>
+            </div>
+            
+            <p style="color: white; text-align: center; margin-bottom: 15px; font-size: 14px;">For more information or to try again, please visit your dashboard.</p>
+            
+            <a style="color: white" href="{{ $('Global Constants').item.json.constants.WEBAPP_URL }}" target="_blank" class="action-button">VIEW DASHBOARD</a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 ZevenGlobal - All rights reserved</p>
+            <div class="social-links">
+                <a href="#">
+                    <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
+                </a>
+                <a href="#">
+                    <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter">
+                </a>
+                <a href="#">
+                    <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+                </a>
+            </div>
+            <p>If you have any questions, contact us at <a href="mailto:{{ $('Global Constants').item.json.constants.EMAIL }}" style="color: #3a9fff; text-decoration: none;">{{ $('Global Constants').item.json.constants.EMAIL }}</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Confirmation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      color: #333333;
+    }
+
+    .email-container {
+      max-width: 550px;
+      margin: 20px auto;
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      text-align: center;
+      padding: 25px 0;
+      background-color: #000000;
+      /* Encabezado negro */
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .header img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    .content {
+      padding: 30px 40px;
+      line-height: 1.6;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 600;
+      color: #222222;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+
+    .text {
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .button-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #000000;
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #333333;
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 13px;
+      color: #888888;
+      background-color: #f8f8f8;
+      border-top: 1px solid #eeeeee;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="email-container">
+    <div class="header">
+      <img src="https://funding.zevenglobal.com/wp-content/uploads/2025/04/LOGO-WHITE.png" alt="Logo">
+    </div>
+    <div class="content">
+      <h1 class="title">Hello dear one 👋</h1>
+      <p class="text">Thank you for registering.</p>
+      <p class="text">To complete your registration and start using the platform, please verify your email by clicking
+        the button below:</p>
+
+      <div class="button-container">
+        <a href="<%= URL %>?confirmation=<%= CODE %>" class="button" target="_blank">Confirm My Email</a>
+      </div>
+    </div>
+    <div class="footer">
+      &copy; 2025 Zeven Global. All rights reserved.
+    </div>
+  </div>
+</body>
+
+</html>
