@@ -5,12 +5,12 @@
 ```json
 {
   "COMPANY_NAME": "Neocapital",
-  "LOGO_URL": "https://example.com/neo-logo.png",
+  "LOGO_URL": "https://neocapitalfunding.com/wp-content/uploads/2025/05/icon-dark.png",
   "COMPANY_ADDRESS": "123 Trading St., Financial District, New York, NY 10005",
-  "SUPPORT_URL": "https://neocapital.com/support",
-  "UNSUBSCRIBE_URL": "https://neocapital.com/unsubscribe",
-  "PRIVACY_URL": "https://neocapital.com/privacy",
-  "IMAGE_URL": "https://neocapital.com/images",
+  "SUPPORT_URL": "https://faq.neocapitalfunding.com",
+  "UNSUBSCRIBE_URL": "https://neocapitalfunding.com/unsubscribe",
+  "PRIVACY_URL": "https://neocapitalfunding.com/privacy-policy/",
+  "IMAGE_URL": "https://neocapitalfunding.com/wp-content/uploads/2025/05/icon-dark.png",
 
   "EMAIL_BG_COLOR": "#fffbeb",
   "CONTAINER_BG_COLOR": "#111111",
@@ -38,9 +38,9 @@
   "WARNING_BG_COLOR": "rgba(245, 158, 11, 0.1)",
 
   "SOCIAL_LINKS": {
-    "facebook": "https://facebook.com/neocapital",
-    "twitter": "https://twitter.com/neocapital",
-    "instagram": "https://instagram.com/neocapital"
+    "facebook": "https://facebook.com",
+    "twitter": "https://twitter.com",
+    "instagram": "https://www.instagram.com/neocapital.fx"
   }
 }
 ```
@@ -50,12 +50,12 @@
 ```json
 {
   "COMPANY_NAME": "ZevenGlobal",
-  "LOGO_URL": "https://example.com/zeven-logo.png",
+  "LOGO_URL": "https://funding.zevenglobal.com/wp-content/uploads/2025/04/cropped-icon-dark.png",
   "COMPANY_ADDRESS": "456 Forex Ave., Trading Hub, London, UK WC2N 5DU",
-  "SUPPORT_URL": "https://zevenglobal.com/support",
+  "SUPPORT_URL": "https://faq.zevenglobalfunding.com",
   "UNSUBSCRIBE_URL": "https://zevenglobal.com/unsubscribe",
-  "PRIVACY_URL": "https://zevenglobal.com/privacy",
-  "IMAGE_URL": "https://zevenglobal.com/images",
+  "PRIVACY_URL": "https://funding.zevenglobal.com/privacy-policy/",
+  "IMAGE_URL": "https://funding.zevenglobal.com/wp-content/uploads/2025/04/cropped-icon-dark.png",
 
   "EMAIL_BG_COLOR": "#f0f5ff",
   "CONTAINER_BG_COLOR": "#0a1a35",
