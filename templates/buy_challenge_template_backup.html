@@ -16,24 +16,57 @@
     }
 
     body {
-      background-color: {{ $('Global Constants').item.json.constants.EMAIL_BG_COLOR }};
+      background-color: {
+          {
+          $('Global Constants').item.json.constants.EMAIL_BG_COLOR
+        }
+      }
+
+      ;
       padding: 40px 20px;
     }
 
     .email-container {
       max-width: 650px;
       margin: 0 auto;
-      background: {{ $('Global Constants').item.json.constants.CONTAINER_BG_COLOR }};
+
+      background: {
+          {
+          $('Global Constants').item.json.constants.CONTAINER_BG_COLOR
+        }
+      }
+
+      ;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 12px 30px {{ $('Global Constants').item.json.constants.SHADOW_COLOR }};
+
+      box-shadow: 0 12px 30px {
+          {
+          $('Global Constants').item.json.constants.SHADOW_COLOR
+        }
+      }
+
+      ;
     }
 
     .top-header {
-      background-color: {{ $('Global Constants').item.json.constants.HEADER_BG_COLOR }};
+      background-color: {
+          {
+          $('Global Constants').item.json.constants.HEADER_BG_COLOR
+        }
+      }
+
+      ;
       padding: 15px 0;
       text-align: center;
-      border-bottom: 1px solid {{ $('Global Constants').item.json.constants.BORDER_COLOR }};
+
+      border-bottom: 1px solid {
+          {
+          $('Global Constants').item.json.constants.BORDER_COLOR
+        }
+      }
+
+      ;
     }
 
     .top-header img {
@@ -42,7 +75,13 @@
     }
 
     .hero-section {
-      background-color: {{ $('Global Constants').item.json.constants.HERO_BG_COLOR }};
+      background-color: {
+          {
+          $('Global Constants').item.json.constants.HERO_BG_COLOR
+        }
+      }
+
+      ;
       padding: 30px 20px;
       text-align: center;
       color: white;
@@ -51,7 +90,14 @@
     .hero-section h1 {
       font-size: 24px;
       margin-bottom: 10px;
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+
+      color: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
       font-weight: 700;
     }
 
@@ -60,7 +106,14 @@
       line-height: 1.5;
       max-width: 450px;
       margin: 0 auto;
-      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+
+      color: {
+          {
+          $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR
+        }
+      }
+
+      ;
     }
 
     .content {
@@ -76,17 +129,38 @@
     .notification-icon svg {
       width: 40px;
       height: 40px;
-      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+
+      fill: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
     }
 
     .notification-card {
       position: relative;
       z-index: 1;
-      background: {{ $('Global Constants').item.json.constants.CARD_BG_COLOR }};
+
+      background: {
+          {
+          $('Global Constants').item.json.constants.CARD_BG_COLOR
+        }
+      }
+
+      ;
       border-radius: 10px;
       padding: 25px 20px;
       margin-bottom: 25px;
-      border: 1px solid {{ $('Global Constants').item.json.constants.CARD_BORDER_COLOR }};
+
+      border: 1px solid {
+          {
+          $('Global Constants').item.json.constants.CARD_BORDER_COLOR
+        }
+      }
+
+      ;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     }
 
@@ -95,7 +169,14 @@
       font-size: 20px;
       margin-bottom: 15px;
       padding-bottom: 12px;
-      border-bottom: 1px solid {{ $('Global Constants').item.json.constants.DIVIDER_COLOR }};
+
+      border-bottom: 1px solid {
+          {
+          $('Global Constants').item.json.constants.DIVIDER_COLOR
+        }
+      }
+
+      ;
       text-align: center;
     }
 
@@ -119,7 +200,13 @@
     }
 
     .info-label {
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      color: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
       font-weight: 500;
       font-size: 14px;
       width: 40%;
@@ -139,32 +226,57 @@
       flex-grow: 1;
     }
 
-    .action-button {
-      display: block;
-      background-color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+    .cta-button {
+      display: inline-block;
+
+      background-color: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
       color: white;
       text-decoration: none;
-      padding: 14px 20px;
-      border-radius: 6px;
-      font-size: 16px;
+      padding: 12px 35px;
+      border-radius: 8px;
       font-weight: 600;
-      text-align: center;
-      margin: 20px auto 10px;
-      max-width: 250px;
-      transition: all 0.3s ease;
+      font-size: 15px;
+      margin-top: 20px;
+      transition: transform 0.2s;
     }
 
-    .action-button:hover {
+    .cta-button:hover {
       transform: translateY(-2px);
     }
 
     .footer {
-      background-color: {{ $('Global Constants').item.json.constants.FOOTER_BG_COLOR }};
+      background-color: {
+          {
+          $('Global Constants').item.json.constants.FOOTER_BG_COLOR
+        }
+      }
+
+      ;
       padding: 25px 20px;
       text-align: center;
-      color: {{ $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR }};
+
+      color: {
+          {
+          $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR
+        }
+      }
+
+      ;
       font-size: 13px;
-      border-top: 1px solid {{ $('Global Constants').item.json.constants.BORDER_COLOR }};
+
+      border-top: 1px solid {
+          {
+          $('Global Constants').item.json.constants.BORDER_COLOR
+        }
+      }
+
+      ;
     }
 
     .footer p {
@@ -183,28 +295,23 @@
     .social-icons svg {
       width: 24px;
       height: 24px;
-      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+
+      fill: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
     }
 
     @media only screen and (max-width: 500px) {
-      .email-container {
-        border-radius: 10px;
-      }
-
-      .top-header img {
-        max-width: 100px;
-      }
-
       .hero-section h1 {
         font-size: 20px;
       }
 
       .hero-section p {
         font-size: 14px;
-      }
-
-      .notification-card {
-        padding: 20px 15px;
       }
 
       .notification-card h2 {
@@ -225,10 +332,9 @@
         width: 100%;
       }
 
-      .action-button {
-        width: 100%;
-        padding: 12px 15px;
-        font-size: 15px;
+      .cta-button {
+        padding: 10px 25px;
+        font-size: 14px;
       }
     }
   </style>
@@ -243,7 +349,8 @@
 
     <div class="hero-section">
       <h1>Your Challenge is Ready to Use</h1>
-      <p>We have configured your challenge and you can now start trading. Here are your access credentials.</p>
+      <p>Your challenge purchase has been successfully processed. You can now access your challenge and start trading.
+      </p>
     </div>
 
     <div class="content">
@@ -254,12 +361,11 @@
             clip-rule="evenodd" />
         </svg>
       </div>
-
       <div class="notification-card">
-        <h2>Access Credentials</h2>
+        <h2>Challenge Details</h2>
 
         <div class="notification-message">
-          <p>Use these credentials to log in to the trading platform and start your challenge.</p>
+          <p>Your challenge purchase has been successfully processed. Here are your challenge details.</p>
         </div>
 
         <div class="info-item">
@@ -283,7 +389,7 @@
         </div>
 
         <div class="info-item">
-          <span class="info-label">Login</span>
+          <span class="info-label">Username</span>
           <span class="info-value">{{ $('Webhook').item.json.login_details.username }}</span>
         </div>
 
@@ -292,12 +398,10 @@
           <span class="info-value">{{ $('Webhook').item.json.login_details.password }}</span>
         </div>
 
-        <p style="color: white; text-align: center; margin-bottom: 15px; font-size: 14px;">To see more details about your challenge and begin trading, please log in to your dashboard.</p>
-
-        <a href="{{ $('Webhook').item.json.dashboard_url }}" target="_blank" class="action-button">VIEW DASHBOARD</a>
-      </div>
-
-      <div class="notification-card">
+        <div style="text-align: center; margin-top: 20px;">
+          <a href="{{ $('Webhook').item.json.dashboard_url }}" class="cta-button">Access Your Dashboard</a>
+        </div>
+      </div>      <div class="notification-card">
         <h2>Next Steps</h2>
         <div class="notification-message">
           <p style="text-align: left; margin-bottom: 10px;">1. Log in to your trading platform using the credentials above.</p>
@@ -313,7 +417,7 @@
           <p>If you have any questions or need assistance with your challenge, our support team is ready to help.</p>
         </div>
         <div style="text-align: center;">
-          <a href="{{ $('Global Constants').item.json.constants.SUPPORT_URL }}" class="action-button">Contact Support</a>
+          <a href="{{ $('Global Constants').item.json.constants.SUPPORT_URL }}" class="cta-button">Contact Support</a>
         </div>
       </div>
     </div>
