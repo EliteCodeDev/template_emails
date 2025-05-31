@@ -326,27 +326,27 @@
       <div class="notification-card">
         <h2>Challenge Details</h2>
         <div class="info-row">
-          <strong>Challenge Type</strong>
+          <strong>Challenge Type </strong>
           {{ $('Webhook').item.json.challenge_type }}
         </div>
 
         <div class="info-row">
-          <strong>Account Size</strong>
+          <strong>Account Size </strong>
           ${{ $('Webhook').item.json.account_size.toLocaleString() }}
         </div>
 
         <div class="info-row">
-          <strong>Challenge ID</strong>
+          <strong>Challenge ID </strong>
           {{ $('Webhook').item.json.challenge_id }}
         </div>
 
         <div class="info-row">
-          <strong>Trading Platform</strong>
+          <strong>Trading Platform </strong>
           {{ $('Webhook').item.json.platform }}
         </div>
 
         <div class="info-row">
-          <strong>Login Credentials</strong>
+          <strong>Login Credentials </strong>
           Username: {{ $('Webhook').item.json.login_details.username }} <br>
           Password: {{ $('Webhook').item.json.login_details.password }}
         </div>
