@@ -454,25 +454,25 @@
 
         <div class="ticket-container">
           <div class="ticket-header">
-            <div class="ticket-number">Ticket #{{ $('Webhook').item.json.data.id }}</div>
+            <div class="ticket-number">Ticket #{{ $('Webhook').item.json.id }}</div>
             <div class="ticket-status">Confirmed</div>
           </div>
           <div class="ticket-info-grid">
             <div class="ticket-info-item">
               <div class="ticket-info-label">Purchase ID</div>
-              <div class="ticket-info-value">{{ $('Webhook').item.json.data.id }}</div>
+              <div class="ticket-info-value">{{ $('Webhook').item.json.id }}</div>
             </div>
             <div class="ticket-info-item">
               <div class="ticket-info-label">Purchase Date</div>
-              <div class="ticket-info-value">{{ new Date($('Webhook').item.json.data.date_created).toLocaleDateString('es-ES') }}</div>
+              <div class="ticket-info-value">{{ new Date($('Webhook').item.json.date_created).toLocaleDateString('es-ES') }}</div>
             </div>
             <div class="ticket-info-item">
               <div class="ticket-info-label">Product</div>
-              <div class="ticket-info-value">{{ $('Webhook').item.json.data.body.line_items[0].name }}</div>
+              <div class="ticket-info-value">{{ $('Webhook').item.json.body.line_items[0].name }}</div>
             </div>
             <div class="ticket-info-item">
               <div class="ticket-info-label">Total</div>
-              <div class="ticket-info-value">{{ $('Webhook').item.json.data.body.total }} {{ $('Webhook').item.json.data.body.currency }}</div>
+              <div class="ticket-info-value">{{ $('Webhook').item.json.body.total }} {{ $('Webhook').item.json.body.currency }}</div>
             </div>
           </div>
           <div style="text-align: center; margin-top: 20px;">
