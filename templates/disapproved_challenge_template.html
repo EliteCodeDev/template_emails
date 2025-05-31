@@ -423,20 +423,19 @@
     <div class="content">
       <div class="notification-card">
         <h2>Challenge Details</h2>
-
         <div class="info-row">
           <strong>Challenge Type</strong>
-          {{ $node["Challenge Details"].json.challenge_type }}
+          {{ $('Webhook').item.json.challenge_type }}
         </div>
 
         <div class="info-row">
           <strong>Account Size</strong>
-          ${{ $node["Challenge Details"].json.account_size.toLocaleString() }}
+          ${{ $('Webhook').item.json.account_size.toLocaleString() }}
         </div>
 
         <div class="info-row">
           <strong>Challenge ID</strong>
-          {{ $node["Challenge Details"].json.challenge_id }}
+          {{ $('Webhook').item.json.challenge_id }}
         </div>
       </div>
 
@@ -446,7 +445,7 @@
         <div class="reasons-section">
           <h3>Rules Violated:</h3>
           <ul>
-            {{ $node["Challenge Details"].json.violated_rules.map(rule => `<li>${rule}</li>`).join('') }}
+            {{ $('Webhook').item.json.violated_rules.map(rule => `<li>${rule}</li>`).join('') }}
           </ul>
         </div>
 
@@ -456,9 +455,8 @@
           <p style="margin-top: 10px;">You can review your performance metrics and the detailed breakdown of rule
             violations in your dashboard.</p>
         </div>
-
         <div style="text-align: center;">
-          <a href="{{ $node[" Challenge Details"].json.dashboard_url }}" class="cta-button">View Performance</a>
+          <a href="{{ $('Webhook').item.json.dashboard_url }}" class="cta-button">View Performance</a>
         </div>
       </div>
 
@@ -468,16 +466,15 @@
         <div class="info-row">
           <p>We'd like to offer you a special discount on your next challenge attempt!</p>
         </div>
-
         <div class="coupon">
           <div class="coupon-info">Use this code at checkout</div>
-          <div class="coupon-code">{{ $node["Challenge Details"].json.discount_code }}</div>
-          <div class="coupon-info">for <span class="highlight">{{ $node["Challenge Details"].json.discount_percentage
-              }}% OFF</span> your next challenge</div>
+          <div class="coupon-code">{{ $('Webhook').item.json.discount_code }}</div>
+          <div class="coupon-info">for <span class="highlight">{{ $('Webhook').item.json.discount_percentage }}%
+              OFF</span> your next challenge</div>
         </div>
 
         <div style="text-align: center;">
-          <a href="{{ $node[" Challenge Details"].json.new_challenge_url }}" class="cta-button">Start New Challenge</a>
+          <a href="{{ $('Webhook').item.json.new_challenge_url }}" class="cta-button">Start New Challenge</a>
         </div>
       </div>
 

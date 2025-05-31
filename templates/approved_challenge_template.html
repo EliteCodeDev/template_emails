@@ -346,29 +346,28 @@
 
       <div class="notification-card">
         <h2>Challenge Details</h2>
-
         <div class="info-row">
           <strong>Challenge Type</strong>
-          {{ $node["Challenge Details"].json.challenge_type }}
+          {{ $('Webhook').item.json.challenge_type }}
         </div>
 
         <div class="info-row">
           <strong>Account Size</strong>
-          ${{ $node["Challenge Details"].json.account_size.toLocaleString() }}
+          ${{ $('Webhook').item.json.account_size.toLocaleString() }}
         </div>
 
         <div class="info-row">
           <strong>Challenge ID</strong>
-          {{ $node["Challenge Details"].json.challenge_id }}
+          {{ $('Webhook').item.json.challenge_id }}
         </div>
 
         <div class="info-row">
           <strong>Profit Target Achieved</strong>
-          ${{ $node["Challenge Details"].json.profit_target.toLocaleString() }}
+          ${{ $('Webhook').item.json.profit_target.toLocaleString() }}
         </div>
 
         <div style="text-align: center; margin-top: 10px;">
-          <a href="{{ $node[" Challenge Details"].json.dashboard_url }}" class="cta-button">View Your Performance</a>
+          <a href="{{ $('Webhook').item.json.dashboard_url }}" class="cta-button">View Your Performance</a>
         </div>
       </div>
 
@@ -381,7 +380,7 @@
           <p>4. Start trading on your new funded account!</p>
         </div>
         <div style="text-align: center;">
-          <a href="{{ $node[" Challenge Details"].json.verification_url }}" class="cta-button">Complete Verification</a>
+          <a href="{{ $('Webhook').item.json.verification_url }}" class="cta-button">Complete Verification</a>
         </div>
       </div>
 
@@ -390,10 +389,10 @@
         <div class="info-row">
           <p>You'll be receiving your funded account credentials shortly. Here's what to expect:</p>
           <ul style="margin-left: 20px; margin-top: 10px;">
-            <li>Initial account size: ${{ $node["Challenge Details"].json.account_size.toLocaleString() }}</li>
-            <li>Profit split: {{ $node["Challenge Details"].json.profit_split }}%</li>
-            <li>Payout frequency: {{ $node["Challenge Details"].json.payout_frequency }}</li>
-            <li>Trading platform: {{ $node["Challenge Details"].json.platform }}</li>
+            <li>Initial account size: ${{ $('Webhook').item.json.account_size.toLocaleString() }}</li>
+            <li>Profit split: {{ $('Webhook').item.json.profit_split }}%</li>
+            <li>Payout frequency: {{ $('Webhook').item.json.payout_frequency }}</li>
+            <li>Trading platform: {{ $('Webhook').item.json.platform }}</li>
           </ul>
         </div>
       </div>

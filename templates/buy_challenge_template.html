@@ -325,35 +325,34 @@
 
       <div class="notification-card">
         <h2>Challenge Details</h2>
-
         <div class="info-row">
           <strong>Challenge Type</strong>
-          {{ $node["Challenge Details"].json.challenge_type }}
+          {{ $('Webhook').item.json.challenge_type }}
         </div>
 
         <div class="info-row">
           <strong>Account Size</strong>
-          ${{ $node["Challenge Details"].json.account_size.toLocaleString() }}
+          ${{ $('Webhook').item.json.account_size.toLocaleString() }}
         </div>
 
         <div class="info-row">
           <strong>Challenge ID</strong>
-          {{ $node["Challenge Details"].json.challenge_id }}
+          {{ $('Webhook').item.json.challenge_id }}
         </div>
 
         <div class="info-row">
           <strong>Trading Platform</strong>
-          {{ $node["Challenge Details"].json.platform }}
+          {{ $('Webhook').item.json.platform }}
         </div>
 
         <div class="info-row">
           <strong>Login Credentials</strong>
-          Username: {{ $node["Challenge Details"].json.login_details.username }} <br>
-          Password: {{ $node["Challenge Details"].json.login_details.password }}
+          Username: {{ $('Webhook').item.json.login_details.username }} <br>
+          Password: {{ $('Webhook').item.json.login_details.password }}
         </div>
 
         <div style="text-align: center; margin-top: 10px;">
-          <a href="{{ $node[" Challenge Details"].json.dashboard_url }}" class="cta-button">Access Your Dashboard</a>
+          <a href="{{ $('Webhook').item.json.dashboard_url }}" class="cta-button">Access Your Dashboard</a>
         </div>
       </div>
 
