@@ -16,7 +16,13 @@
     }
 
     body {
-      background-color: {{ $('Global Constants').item.json.constants.EMAIL_BG_COLOR }};
+      background-color: {
+          {
+          $('Global Constants').item.json.constants.EMAIL_BG_COLOR
+        }
+      }
+
+      ;
       padding: 20px;
       line-height: 1.6;
     }
@@ -24,17 +30,44 @@
     .email-container {
       max-width: 500px;
       margin: 0 auto;
-      background: linear-gradient(145deg, {{ $('Global Constants').item.json.constants.CONTAINER_BG_COLOR }} 0%, {{ $('Global Constants').item.json.constants.HERO_BG_COLOR }} 100%);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px {{ $('Global Constants').item.json.constants.SHADOW_COLOR }};
-      border: 1px solid rgba(245, 158, 11, 0.1);
+
+      background: linear-gradient(145deg, {
+          {
+          $('Global Constants').item.json.constants.CONTAINER_BG_COLOR
+        }
+      }
+
+      0%, {
+        {
+        $('Global Constants').item.json.constants.HERO_BG_COLOR
+      }
+    }
+
+    100%);
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 20px 40px {
+        {
+        $('Global Constants').item.json.constants.SHADOW_COLOR
+      }
+    }
+
+    ;
+    border: 1px solid rgba(245, 158, 11, 0.1);
     }
 
     .header {
       padding: 25px 25px 15px;
       text-align: center;
-      background-color: {{ $('Global Constants').item.json.constants.HEADER_BG_COLOR }};
+
+      background-color: {
+          {
+          $('Global Constants').item.json.constants.HEADER_BG_COLOR
+        }
+      }
+
+      ;
     }
 
     .logo {
@@ -51,10 +84,29 @@
       text-align: center;
       padding: 15px 0 25px;
       letter-spacing: 4px;
-      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 0%, {{ $('Global Constants').item.json.constants.LABEL_COLOR }} 50%, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+
+      background: linear-gradient(135deg, {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      0%, {
+        {
+        $('Global Constants').item.json.constants.LABEL_COLOR
+      }
+    }
+
+    50%, {
+      {
+      $('Global Constants').item.json.constants.ACCENT_COLOR
+    }
+    }
+
+    100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     }
 
     .content {
@@ -74,14 +126,28 @@
     .user-greeting {
       font-size: 18px;
       font-weight: 600;
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+
+      color: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
       margin-bottom: 25px;
       text-align: center;
     }
 
     .success-message {
       font-size: 16px;
-      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+
+      color: {
+          {
+          $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR
+        }
+      }
+
+      ;
       margin-bottom: 35px;
       line-height: 1.6;
       max-width: 420px;
@@ -92,7 +158,14 @@
     .section-header {
       font-size: 16px;
       font-weight: 700;
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+
+      color: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       margin-bottom: 15px;
@@ -102,14 +175,27 @@
 
     .info-text {
       font-size: 14px;
-      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+
+      color: {
+          {
+          $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR
+        }
+      }
+
+      ;
       line-height: 1.8;
       text-align: left;
       margin-bottom: 35px;
     }
 
     .highlight {
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      color: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
       font-weight: 600;
     }
 
@@ -122,19 +208,51 @@
     .verification-banner svg {
       width: 50px;
       height: 50px;
-      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+
+      fill: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
       margin-bottom: 10px;
     }
 
     .footer {
-      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.FOOTER_BG_COLOR }} 0%, {{ $('Global Constants').item.json.constants.HEADER_BG_COLOR }} 100%);
-      padding: 25px;
-      text-align: center;
-      border-top: 1px solid {{ $('Global Constants').item.json.constants.BORDER_COLOR }};
+      background: linear-gradient(135deg, {
+          {
+          $('Global Constants').item.json.constants.FOOTER_BG_COLOR
+        }
+      }
+
+      0%, {
+        {
+        $('Global Constants').item.json.constants.HEADER_BG_COLOR
+      }
+    }
+
+    100%);
+    padding: 25px;
+    text-align: center;
+
+    border-top: 1px solid {
+        {
+        $('Global Constants').item.json.constants.BORDER_COLOR
+      }
+    }
+
+    ;
     }
 
     .footer-text {
-      color: {{ $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR }};
+      color: {
+          {
+          $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR
+        }
+      }
+
+      ;
       font-size: 12px;
       margin-bottom: 8px;
       line-height: 1.5;
@@ -152,7 +270,14 @@
     .social-icons svg {
       width: 24px;
       height: 24px;
-      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+
+      fill: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
     }
 
     @media (max-width: 600px) {
@@ -188,7 +313,8 @@
 <body>
   <div class="email-container">
     <div class="header">
-      <img src="{{ $('Global Constants').item.json.constants.LOGO_URL }}" alt="{{ $('Global Constants').item.json.constants.COMPANY_NAME }} Logo" class="logo">
+      <img src="{{ $('Global Constants').item.json.constants.LOGO_URL }}"
+        alt="{{ $('Global Constants').item.json.constants.COMPANY_NAME }} Logo" class="logo">
       <div class="company-name">{{ $('Global Constants').item.json.constants.COMPANY_NAME }}</div>
     </div>
 
@@ -200,18 +326,20 @@
             clip-rule="evenodd" />
         </svg>
       </div>
-      
+
       <div class="user-greeting">
         Hola {{ $('Webhook').item.json.firstName }} {{ $('Webhook').item.json.lastName }}
       </div>
 
       <div class="section-header">Estado de Verificación</div>
       <div class="info-text">
-        <!-- Ha completado con éxito los objetivos comerciales de evaluación para <span class="highlight">Fase 1 y 2</span>.<br><br> -->
-        Las cuentas están bajo <span class="highlight">revisión sistemática automatizada</span> para verificar el cumplimiento de las reglas comerciales.<br><br>
-        Tenga en cuenta que este proceso de revisión puede tardar hasta <span class="highlight">2 días hábiles</span>.<br><br>
-        Recibirá más instrucciones una vez finalizada la <span class="highlight">REVISIÓN</span>.<br><br>
-        <span class="highlight">Gracias por su paciencia.</span>
+        <!-- Mensaje para informar sobre la validación de documentos -->
+        Hemos recibido tus documentos y los estamos revisando para validar tu identidad.<br><br>
+        Los documentos están en proceso de <span class="highlight">verificación</span>, lo cual puede tardar entre <span
+          class="highlight">1 y 2 días hábiles</span>.<br><br>
+        Recibirás más instrucciones y el estado de tu validación tan pronto como se complete la revisión.<br><br>
+        <span class="highlight">Gracias por tu paciencia.</span>
+
       </div>
     </div>
 
@@ -238,14 +366,16 @@
           </svg>
         </a>
       </div>
-      <p class="footer-text">&copy; {{ new Date().getFullYear() }} {{ $('Global Constants').item.json.constants.COMPANY_NAME }}. All rights reserved.</p>
+      <p class="footer-text">&copy; {{ new Date().getFullYear() }} {{ $('Global
+        Constants').item.json.constants.COMPANY_NAME }}. All rights reserved.</p>
       <p class="footer-text">{{ $('Global Constants').item.json.constants.COMPANY_ADDRESS }}</p>
       <p class="footer-text">
         <a href="{{ $('Global Constants').item.json.constants.UNSUBSCRIBE_URL }}"
           style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Unsubscribe</a>
         |
         <a href="{{ $('Global Constants').item.json.constants.PRIVACY_URL }}"
-          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Privacy Policy</a>
+          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Privacy
+          Policy</a>
       </p>
     </div>
   </div>
