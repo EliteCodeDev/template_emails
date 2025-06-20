@@ -366,11 +366,10 @@
           </svg>
         </a>
       </div>
-      <p class="footer-text">
-        &copy; {{$moment().format("YYYY")}} {{$node["Global Constants"].json.constants.COMPANY_NAME}}. All rights
-        reserved.
+      <p class="footer-text">&copy; {{ new Date().getFullYear() }} {{ $('Global
+        Constants').item.json.constants.COMPANY_NAME }}. All rights reserved.
       </p>
-
+      
       <p class="footer-text">
         <a href="{{ $('Global Constants').item.json.constants.UNSUBSCRIBE_URL }}"
           style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Unsubscribe</a>
