@@ -6,283 +6,187 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Challenge is Ready to Use - {{ $('Global Constants').item.json.constants.COMPANY_NAME}}</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     body {
-      background-color: {
-          {
-          $('Global Constants').item.json.constants.EMAIL_BG_COLOR
-        }
-      }
-
-      ;
-      padding: 40px 20px;
+      background-color: {{ $('Global Constants').item.json.constants.EMAIL_BG_COLOR }};
+      padding: 20px;
+      line-height: 1.6;
     }
 
     .email-container {
-      max-width: 650px;
+      max-width: 500px;
       margin: 0 auto;
-
-      background: {
-          {
-          $('Global Constants').item.json.constants.CONTAINER_BG_COLOR
-        }
-      }
-
-      ;
-      border-radius: 16px;
+      background: linear-gradient(145deg, {{ $('Global Constants').item.json.constants.CONTAINER_BG_COLOR }} 0%, {{ $('Global Constants').item.json.constants.HERO_BG_COLOR }} 100%);
+      border-radius: 20px;
       overflow: hidden;
-
-      box-shadow: 0 12px 30px {
-          {
-          $('Global Constants').item.json.constants.SHADOW_COLOR
-        }
-      }
-
-      ;
+      box-shadow: 0 20px 40px {{ $('Global Constants').item.json.constants.SHADOW_COLOR }};
+      border: 1px solid rgba(245, 158, 11, 0.1);
     }
 
-    .top-header {
-      background-color: {
-          {
-          $('Global Constants').item.json.constants.HEADER_BG_COLOR
-        }
-      }
-
-      ;
-      padding: 15px 0;
+    .header {
+      padding: 25px 25px 15px;
       text-align: center;
-
-      border-bottom: 1px solid {
-          {
-          $('Global Constants').item.json.constants.BORDER_COLOR
-        }
-      }
-
-      ;
+      background-color: {{ $('Global Constants').item.json.constants.HEADER_BG_COLOR }};
     }
 
-    .top-header img {
-      max-width: 120px;
+    .logo {
+      max-width: 80px;
       height: auto;
+      opacity: 0.95;
+      filter: brightness(1.2);
     }
 
-    .hero-section {
-      background-color: {
-          {
-          $('Global Constants').item.json.constants.HERO_BG_COLOR
-        }
-      }
-
-      ;
-      padding: 30px 20px;
+    .company-name {
+      font-size: 28px;
+      font-weight: 800;
+      color: transparent;
       text-align: center;
-      color: white;
-    }
-
-    .hero-section h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-
-      color: {
-          {
-          $('Global Constants').item.json.constants.ACCENT_COLOR
-        }
-      }
-
-      ;
-      font-weight: 700;
-    }
-
-    .hero-section p {
-      font-size: 15px;
-      line-height: 1.5;
-      max-width: 450px;
-      margin: 0 auto;
-
-      color: {
-          {
-          $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR
-        }
-      }
-
-      ;
+      padding: 15px 0 25px;
+      letter-spacing: 4px;
+      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 0%, {{ $('Global Constants').item.json.constants.LABEL_COLOR }} 50%, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .content {
-      padding: 30px 25px;
-      position: relative;
+      padding: 0 30px 35px;
+      text-align: center;
     }
 
-    .notification-icon {
-      text-align: center;
+    .success-message {
+      font-size: 16px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      margin-bottom: 35px;
+      line-height: 1.6;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-header {
+      font-size: 16px;
+      font-weight: 700;
+      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
       margin-bottom: 15px;
+      text-align: left;
+      text-shadow: 0 1px 3px rgba(245, 158, 11, 0.3);
     }
 
-    .notification-icon svg {
-      width: 40px;
-      height: 40px;
-
-      fill: {
-          {
-          $('Global Constants').item.json.constants.ACCENT_COLOR
-        }
-      }
-
-      ;
-    }
-
-    .notification-card {
-      position: relative;
-      z-index: 1;
-
-      background: {
-          {
-          $('Global Constants').item.json.constants.CARD_BG_COLOR
-        }
-      }
-
-      ;
-      border-radius: 10px;
-      padding: 25px 20px;
-      margin-bottom: 25px;
-
-      border: 1px solid {
-          {
-          $('Global Constants').item.json.constants.CARD_BORDER_COLOR
-        }
-      }
-
-      ;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    }
-
-    .notification-card h2 {
-      color: white;
-      font-size: 20px;
-      margin-bottom: 15px;
-      padding-bottom: 12px;
-
-      border-bottom: 1px solid {
-          {
-          $('Global Constants').item.json.constants.DIVIDER_COLOR
-        }
-      }
-
-      ;
-      text-align: center;
-    }
-
-    .notification-message {
-      color: white;
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    .info-item {
-      display: flex;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(100, 150, 255, 0.1);
-    }
-
-    .info-item:last-child {
-      border-bottom: none;
-    }
-
-    .info-label {
-      color: {
-          {
-          $('Global Constants').item.json.constants.ACCENT_COLOR
-        }
-      }
-
-      ;
-      font-weight: 500;
+    .info-text {
       font-size: 14px;
-      width: 40%;
-      padding-right: 15px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 35px;
     }
 
-    .info-value {
-      color: white;
+    .highlight {
+      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
       font-weight: 600;
-      font-size: 15px;
-      background-color: rgba(100, 150, 255, 0.1);
-      padding: 8px 12px;
-      border-radius: 4px;
-      border: 1px solid rgba(100, 150, 255, 0.2);
-      word-break: break-word;
-      width: 60%;
-      flex-grow: 1;
+    }
+
+    .credentials-header {
+      font-size: 16px;
+      font-weight: 700;
+      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+      text-align: left;
+      text-shadow: 0 1px 3px rgba(245, 158, 11, 0.3);
+    }
+
+    .credentials-text {
+      font-size: 14px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .steps-text {
+      font-size: 14px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 30px;
     }
 
     .action-button {
-      display: block;
-
-      background-color: {
-          {
-          $('Global Constants').item.json.constants.ACCENT_COLOR
-        }
-      }
-
-      ;
+      display: inline-block;
+      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 0%, {{ $('Global Constants').item.json.constants.LABEL_COLOR }} 100%);
       color: white;
       text-decoration: none;
-      padding: 14px 20px;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-      text-align: center;
-      margin: 20px auto 10px;
-      max-width: 250px;
-      transition: all 0.3s ease;
+      padding: 16px 45px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+      margin: 10px 5px;
+    }
+
+    .action-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transition: left 0.6s ease-in-out;
+    }
+
+    .action-button:hover::before {
+      left: 100%;
     }
 
     .action-button:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+    }
+
+    .celebration-banner {
+      padding: 15px 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .celebration-banner svg {
+      width: 50px;
+      height: 50px;
+      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      margin-bottom: 10px;
     }
 
     .footer {
-      background-color: {
-          {
-          $('Global Constants').item.json.constants.FOOTER_BG_COLOR
-        }
-      }
-
-      ;
-      padding: 25px 20px;
+      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.FOOTER_BG_COLOR }} 0%, {{ $('Global Constants').item.json.constants.HEADER_BG_COLOR }} 100%);
+      padding: 25px;
       text-align: center;
-
-      color: {
-          {
-          $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR
-        }
-      }
-
-      ;
-      font-size: 13px;
-
-      border-top: 1px solid {
-          {
-          $('Global Constants').item.json.constants.BORDER_COLOR
-        }
-      }
-
-      ;
+      border-top: 1px solid {{ $('Global Constants').item.json.constants.BORDER_COLOR }};
     }
 
-    .footer p {
-      margin-bottom: 10px;
+    .footer-text {
+      color: {{ $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR }};
+      font-size: 12px;
+      margin-bottom: 8px;
+      line-height: 1.5;
     }
 
     .social-icons {
@@ -297,59 +201,34 @@
     .social-icons svg {
       width: 24px;
       height: 24px;
-
-      fill: {
-          {
-          $('Global Constants').item.json.constants.ACCENT_COLOR
-        }
-      }
-
-      ;
+      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
     }
 
-    @media only screen and (max-width: 500px) {
+    @media (max-width: 600px) {
       .email-container {
-        border-radius: 10px;
+        margin: 0 10px;
+        max-width: calc(100vw - 20px);
+        border-radius: 16px;
       }
 
-      .top-header img {
-        max-width: 100px;
+      .content {
+        padding: 0 20px 30px;
       }
 
-      .hero-section h1 {
+      .company-name {
         font-size: 20px;
       }
 
-      .hero-section p {
-        font-size: 14px;
-      }
-
-      .notification-card {
-        padding: 20px 15px;
-      }
-
-      .notification-card h2 {
-        font-size: 18px;
-      }
-
-      .info-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .info-label {
-        width: 100%;
-        margin-bottom: 6px;
-      }
-
-      .info-value {
-        width: 100%;
+      .info-text,
+      .credentials-text,
+      .steps-text {
+        font-size: 13px;
       }
 
       .action-button {
-        width: 100%;
-        padding: 12px 15px;
-        font-size: 15px;
+        padding: 14px 35px;
+        font-size: 14px;
+        margin: 8px 3px;
       }
     }
   </style>
@@ -357,89 +236,53 @@
 
 <body>
   <div class="email-container">
-    <div class="top-header">
-      <img src="{{ $('Global Constants').item.json.constants.LOGO_URL}}"
-        alt="{{ $('Global Constants').item.json.constants.COMPANY_NAME}} Logo">
-    </div>
-
-    <div class="hero-section">
-      <h1>Your Challenge is Ready to Use</h1>
-      <p>We have configured your challenge and you can now start trading. Here are your access credentials.</p>
+    <div class="header">
+      <img src="{{ $('Global Constants').item.json.constants.LOGO_URL }}" alt="{{ $('Global Constants').item.json.constants.COMPANY_NAME }} Logo" class="logo">
+      <div class="company-name">{{ $('Global Constants').item.json.constants.COMPANY_NAME }}</div>
     </div>
 
     <div class="content">
-      <div class="notification-icon">
+      <div class="celebration-banner">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd"
             d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
             clip-rule="evenodd" />
         </svg>
       </div>
+      
+      <p class="success-message">
+        We have configured your challenge and you can now start trading. Here are your access credentials.
+      </p>
 
-      <div class="notification-card">
-        <h2>Access Credentials</h2>
-
-        <div class="notification-message">
-          <p>Use these credentials to log in to the trading platform and start your challenge.</p>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Challenge Type</span>
-          <span class="info-value">{{ $('Webhook').item.json.challenge_type }}</span>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Account Size</span>
-          <span class="info-value">${{ $('Webhook').item.json.account_size.toLocaleString() }}</span>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Challenge ID</span>
-          <span class="info-value">{{ $('Webhook').item.json.challenge_id }}</span>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Trading Platform</span>
-          <span class="info-value">{{ $('Webhook').item.json.platform }}</span>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Login</span>
-          <span class="info-value">{{ $('Webhook').item.json.login_details.username }}</span>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Password</span>
-          <span class="info-value">{{ $('Webhook').item.json.login_details.password }}</span>
-        </div>
-
-        <p style="color: white; text-align: center; margin-bottom: 15px; font-size: 14px;">To see more details about
-          your challenge and begin trading, please log in to your dashboard.</p>
-
-        <a href="{{ $('Webhook').item.json.dashboard_url }}" target="_blank" class="action-button">VIEW DASHBOARD</a>
+      <div class="credentials-header">Access Credentials</div>
+      <div class="credentials-text">
+        Use these credentials to log in to the trading platform and start your challenge.<br><br>
+        Your <span class="highlight">{{ $('Webhook').item.json.challenge_type }}</span> challenge with account size <span class="highlight">${{ $('Webhook').item.json.account_size.toLocaleString() }}</span> (ID: <span class="highlight">{{ $('Webhook').item.json.challenge_id }}</span>) is ready on the <span class="highlight">{{ $('Webhook').item.json.platform }}</span> platform.<br><br>
+        <strong>Login:</strong> <span class="highlight">{{ $('Webhook').item.json.login_details.username }}</span><br>
+        <strong>Password:</strong> <span class="highlight">{{ $('Webhook').item.json.login_details.password }}</span><br><br>
+        To see more details about your challenge and begin trading, please log in to your dashboard.
       </div>
 
-      <div class="notification-card">
-        <h2>Next Steps</h2>
-        <div class="notification-message">
-          <p style="text-align: left; margin-bottom: 10px;">1. Log in to your trading platform using the credentials
-            above.</p>
-          <p style="text-align: left; margin-bottom: 10px;">2. Review the challenge rules in your dashboard.</p>
-          <p style="text-align: left; margin-bottom: 10px;">3. Start trading according to your strategy.</p>
-          <p style="text-align: left; margin-bottom: 0;">4. Monitor your performance on the dashboard.</p>
-        </div>
+      <a href="{{ $('Webhook').item.json.dashboard_url }}" target="_blank" class="action-button">
+        View Dashboard
+      </a>
+
+      <div class="section-header">Next Steps</div>
+      <div class="steps-text">
+        1. Log in to your trading platform using the credentials above.<br>
+        2. Review the challenge rules in your dashboard.<br>
+        3. Start trading according to your strategy.<br>
+        4. Monitor your performance on the dashboard.
       </div>
 
-      <div class="notification-card">
-        <h2>Need Help?</h2>
-        <div class="notification-message">
-          <p>If you have any questions or need assistance with your challenge, our support team is ready to help.</p>
-        </div>
-        <div style="text-align: center;">
-          <a href="{{ $('Global Constants').item.json.constants.SUPPORT_URL }}" class="action-button">Contact
-            Support</a>
-        </div>
+      <div class="section-header">Need Help?</div>
+      <div class="info-text">
+        If you have any questions or need assistance with your challenge, our support team is ready to help you succeed.
       </div>
+
+      <a href="{{ $('Global Constants').item.json.constants.SUPPORT_URL }}" target="_blank" class="action-button">
+        Contact Support
+      </a>
     </div>
 
     <div class="footer">
@@ -465,16 +308,14 @@
           </svg>
         </a>
       </div>
-      <p>&copy; {{ new Date().getFullYear() }} {{ $('Global Constants').item.json.constants.COMPANY_NAME }}. All rights
-        reserved.</p>
-      <p>{{ $('Global Constants').item.json.constants.COMPANY_ADDRESS }}</p>
-      <p>
+      <p class="footer-text">&copy; {{ new Date().getFullYear() }} {{ $('Global Constants').item.json.constants.COMPANY_NAME }}. All rights reserved.</p>
+      <p class="footer-text">{{ $('Global Constants').item.json.constants.COMPANY_ADDRESS }}</p>
+      <p class="footer-text">
         <a href="{{ $('Global Constants').item.json.constants.UNSUBSCRIBE_URL }}"
           style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Unsubscribe</a>
         |
         <a href="{{ $('Global Constants').item.json.constants.PRIVACY_URL }}"
-          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Privacy
-          Policy</a>
+          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Privacy Policy</a>
       </p>
     </div>
   </div>

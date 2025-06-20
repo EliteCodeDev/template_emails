@@ -4,144 +4,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Withdrawal Update - {{ $('Global Constants').item.json.constants.COMPANY_NAME}}
-  </title>
+  <title>Withdrawal Update - {{ $('Global Constants').item.json.constants.COMPANY_NAME}}</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     body {
       background-color: {{ $('Global Constants').item.json.constants.EMAIL_BG_COLOR }};
-      padding: 40px 20px;
+      padding: 20px;
+      line-height: 1.6;
     }
 
     .email-container {
-      max-width: 650px;
+      max-width: 500px;
       margin: 0 auto;
-      background: {{ $('Global Constants').item.json.constants.CONTAINER_BG_COLOR }};
-      border-radius: 16px;
+      background: linear-gradient(145deg, {{ $('Global Constants').item.json.constants.CONTAINER_BG_COLOR }} 0%, {{ $('Global Constants').item.json.constants.HERO_BG_COLOR }} 100%);
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 12px 30px {{ $('Global Constants').item.json.constants.SHADOW_COLOR }};
+      box-shadow: 0 20px 40px {{ $('Global Constants').item.json.constants.SHADOW_COLOR }};
+      border: 1px solid rgba(245, 158, 11, 0.1);
     }
 
-    .top-header {
+    .header {
+      padding: 25px 25px 15px;
+      text-align: center;
       background-color: {{ $('Global Constants').item.json.constants.HEADER_BG_COLOR }};
-      padding: 15px 0;
-      text-align: center;
-      border-bottom: 1px solid {{ $('Global Constants').item.json.constants.BORDER_COLOR }};
     }
 
-    .top-header img {
-      max-width: 120px;
+    .logo {
+      max-width: 80px;
       height: auto;
+      opacity: 0.95;
+      filter: brightness(1.2);
     }
 
-    .hero-section {
-      background-color: {{ $('Global Constants').item.json.constants.HERO_BG_COLOR }};
-      padding: 30px 20px;
+    .company-name {
+      font-size: 28px;
+      font-weight: 800;
+      color: transparent;
       text-align: center;
-      color: white;
-    }
-
-    .hero-section h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      font-weight: 700;
-    }
-
-    .hero-section p {
-      font-size: 15px;
-      line-height: 1.5;
-      max-width: 450px;
-      margin: 0 auto;
-      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      padding: 15px 0 25px;
+      letter-spacing: 4px;
+      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 0%, {{ $('Global Constants').item.json.constants.LABEL_COLOR }} 50%, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .content {
-      padding: 30px 25px;
-      position: relative;
-    }
-
-    .notification-icon {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    .notification-icon svg {
-      width: 40px;
-      height: 40px;
-      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-    }
-
-    .notification-card {
-      position: relative;
-      z-index: 1;
-      background: {{ $('Global Constants').item.json.constants.CARD_BG_COLOR }};
-      border-radius: 10px;
-      padding: 25px 20px;
-      margin-bottom: 25px;
-      border: 1px solid {{ $('Global Constants').item.json.constants.CARD_BORDER_COLOR }};
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    }
-
-    .notification-card h2 {
-      color: white;
-      font-size: 20px;
-      margin-bottom: 15px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid {{ $('Global Constants').item.json.constants.DIVIDER_COLOR }};
+      padding: 0 30px 35px;
       text-align: center;
     }
 
-    .info-row {
-      margin-bottom: 20px;
+    .update-message {
+      font-size: 16px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      margin-bottom: 35px;
+      line-height: 1.6;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-header {
+      font-size: 16px;
+      font-weight: 700;
+      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+      text-align: left;
+      text-shadow: 0 1px 3px rgba(245, 158, 11, 0.3);
+    }
+
+    .info-text {
       font-size: 14px;
-      color: #e5e7eb;
-      display: flex;
-      flex-direction: column;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 35px;
     }
 
-    .info-row strong {
-      display: block;
-      margin-bottom: 5px;
-      color: {{ $('Global Constants').item.json.constants.LABEL_COLOR }};
+    .highlight {
+      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      font-weight: 600;
     }
 
-    .cta-button {
+    .withdrawal-text {
+      font-size: 14px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .steps-text {
+      font-size: 14px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .action-button {
       display: inline-block;
-      background-color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 0%, {{ $('Global Constants').item.json.constants.LABEL_COLOR }} 100%);
       color: white;
       text-decoration: none;
-      padding: 12px 35px;
-      border-radius: 8px;
-      font-weight: 600;
+      padding: 16px 45px;
+      border-radius: 12px;
       font-size: 15px;
-      margin-top: 20px;
-      transition: transform 0.2s;
+      font-weight: 700;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+      margin: 10px 5px;
     }
 
-    .cta-button:hover {
-      transform: translateY(-2px);
+    .action-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transition: left 0.6s ease-in-out;
+    }
+
+    .action-button:hover::before {
+      left: 100%;
+    }
+
+    .action-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+    }
+
+    .update-banner {
+      padding: 15px 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .update-banner svg {
+      width: 50px;
+      height: 50px;
+      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      margin-bottom: 10px;
     }
 
     .footer {
-      background-color: {{ $('Global Constants').item.json.constants.FOOTER_BG_COLOR }};
-      padding: 25px 20px;
+      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.FOOTER_BG_COLOR }} 0%, {{ $('Global Constants').item.json.constants.HEADER_BG_COLOR }} 100%);
+      padding: 25px;
       text-align: center;
-      color: {{ $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR }};
-      font-size: 13px;
       border-top: 1px solid {{ $('Global Constants').item.json.constants.BORDER_COLOR }};
     }
 
-    .footer p {
-      margin-bottom: 10px;
+    .footer-text {
+      color: {{ $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR }};
+      font-size: 12px;
+      margin-bottom: 8px;
+      line-height: 1.5;
     }
 
     .social-icons {
@@ -159,35 +193,31 @@
       fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
     }
 
-    .celebration-banner {
-      padding: 15px 0;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+    @media (max-width: 600px) {
+      .email-container {
+        margin: 0 10px;
+        max-width: calc(100vw - 20px);
+        border-radius: 16px;
+      }
 
-    .celebration-banner svg {
-      width: 50px;
-      height: 50px;
-      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      margin-bottom: 10px;
-    }
+      .content {
+        padding: 0 20px 30px;
+      }
 
-    @media only screen and (max-width: 500px) {
-      .hero-section h1 {
+      .company-name {
         font-size: 20px;
       }
 
-      .hero-section p {
-        font-size: 14px;
+      .info-text,
+      .withdrawal-text,
+      .steps-text {
+        font-size: 13px;
       }
 
-      .notification-card h2 {
-        font-size: 18px;
-      }
-
-      .cta-button {
-        padding: 10px 25px;
+      .action-button {
+        padding: 14px 35px;
         font-size: 14px;
+        margin: 8px 3px;
       }
     }
   </style>
@@ -195,79 +225,57 @@
 
 <body>
   <div class="email-container">
-    <div class="top-header">
-      <img src="{{ $('Global Constants').item.json.constants.LOGO_URL}}"
-        alt="{{ $('Global Constants').item.json.constants.COMPANY_NAME}} Logo">
-    </div>
-
-    <div class="hero-section">
-      <h1>Withdrawal Status Update</h1>
-      <p>We have an important update regarding your withdrawal request. Please review the details below for the current status of your withdrawal.</p>
+    <div class="header">
+      <img src="{{ $('Global Constants').item.json.constants.LOGO_URL }}" alt="{{ $('Global Constants').item.json.constants.COMPANY_NAME }} Logo" class="logo">
+      <div class="company-name">{{ $('Global Constants').item.json.constants.COMPANY_NAME }}</div>
     </div>
 
     <div class="content">
-      <div class="celebration-banner">
+      <div class="update-banner">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
         </svg>
       </div>
+      
+      <p class="update-message">
+        We have an important update regarding your withdrawal request. Please review the details below for the current status of your withdrawal.
+      </p>
 
-      <div class="notification-card">
-        <h2>Withdrawal Information</h2>
-        
-        <div class="info-row">
-          <strong>Withdrawal Amount</strong>
-          ${{ $('Webhook').item.json.withdraw.toLocaleString() }}
-        </div>
-
-        <div class="info-row">
-          <strong>Withdrawal ID</strong>
-          {{ $('Webhook').item.json.id }}
-        </div>
-
-        <div class="info-row">
-          <strong>Challenge ID</strong>
-          {{ $('Webhook').item.json.challengeId }}
-        </div>
-
-        <div class="info-row">
-          <strong>Request Date</strong>
-          {{ new Date($('Webhook').item.json.startDate).toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          }) }}
-        </div>
-
-        <div class="info-row">
-          <strong>Status Updated</strong>
-          {{ new Date($('Webhook').item.json.createdAt).toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          }) }}
-        </div>
-
-        <div class="info-row">
-          <strong>Current Status</strong>
-          {{ $('Webhook').item.json.phase }}
-        </div>
-
-        <div class="info-row">
-          <strong>Trader</strong>
-          {{ $('Webhook').item.json.user }}
-        </div>
+      <div class="section-header">Withdrawal Information</div>
+      <div class="withdrawal-text">
+        We have an update on your withdrawal request for <span class="highlight">${{ $('Webhook').item.json.withdraw.toLocaleString() }}</span> from trader <span class="highlight">{{ $('Webhook').item.json.user }}</span>.<br><br>
+        <strong>Withdrawal ID:</strong> <span class="highlight">{{ $('Webhook').item.json.id }}</span><br>
+        <strong>Challenge ID:</strong> <span class="highlight">{{ $('Webhook').item.json.challengeId }}</span><br>
+        <strong>Request Date:</strong> <span class="highlight">{{ new Date($('Webhook').item.json.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span><br>
+        <strong>Status Updated:</strong> <span class="highlight">{{ new Date($('Webhook').item.json.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span><br>
+        <strong>Current Status:</strong> <span class="highlight">{{ $('Webhook').item.json.phase }}</span>
       </div>
 
-      <div class="notification-card">
-        <h2>What Happens Next</h2>
-        <div class="info-row">
-          <p>1. If approved, your withdrawal will be processed within 3-5 business days.</p>
-          <p>2. You will receive email confirmation once the payment has been sent.</p>
-          <p>3. Funds will be transferred to your registered payment method.</p>
-          <p>4. Contact our support team if you have any questions about this update.</p>
-        </div>
+      <div class="section-header">What Happens Next</div>
+      <div class="steps-text">
+        1. If approved, your withdrawal will be processed within 3-5 business days.<br>
+        2. You will receive email confirmation once the payment has been sent.<br>
+        3. Funds will be transferred to your registered payment method.<br>
+        4. Contact our support team if you have any questions about this update.
       </div>
+
+      <div class="section-header">Track Your Withdrawal</div>
+      <div class="info-text">
+        You can monitor the status of your withdrawal request at any time through your dashboard. We'll continue to send you email updates as your request progresses through our review process.
+      </div>
+
+      <a href="{{ $('Global Constants').item.json.constants.WEBAPP_URL }}" target="_blank" class="action-button">
+        View Dashboard
+      </a>
+
+      <div class="section-header">Need Help?</div>
+      <div class="info-text">
+        If you have any questions about this withdrawal status update or need assistance, our support team is ready to help you.
+      </div>
+
+      <a href="{{ $('Global Constants').item.json.constants.SUPPORT_URL }}" target="_blank" class="action-button">
+        Contact Support
+      </a>
     </div>
 
     <div class="footer">
@@ -293,16 +301,14 @@
           </svg>
         </a>
       </div>
-      <p>&copy; {{ new Date().getFullYear() }} {{ $('Global Constants').item.json.constants.COMPANY_NAME }}. All rights
-        reserved.</p>
-      <p>{{ $('Global Constants').item.json.constants.COMPANY_ADDRESS }}</p>
-      <p>
+      <p class="footer-text">&copy; {{ new Date().getFullYear() }} {{ $('Global Constants').item.json.constants.COMPANY_NAME }}. All rights reserved.</p>
+      <p class="footer-text">{{ $('Global Constants').item.json.constants.COMPANY_ADDRESS }}</p>
+      <p class="footer-text">
         <a href="{{ $('Global Constants').item.json.constants.UNSUBSCRIBE_URL }}"
           style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Unsubscribe</a>
         |
         <a href="{{ $('Global Constants').item.json.constants.PRIVACY_URL }}"
-          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Privacy
-          Policy</a>
+          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Privacy Policy</a>
       </p>
     </div>
   </div>
