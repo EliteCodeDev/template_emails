@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Congratulations! Your challenge has been approved - {{ $('Global Constants').item.json.constants.COMPANY_NAME}}</title>
+  <title>Datos de verificación recibidos - {{ $('Global Constants').item.json.constants.COMPANY_NAME}}</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
@@ -16,7 +16,13 @@
     }
 
     body {
-      background-color: {{ $('Global Constants').item.json.constants.EMAIL_BG_COLOR }};
+      background-color: {
+          {
+          $('Global Constants').item.json.constants.EMAIL_BG_COLOR
+        }
+      }
+
+      ;
       padding: 20px;
       line-height: 1.6;
     }
@@ -24,17 +30,44 @@
     .email-container {
       max-width: 500px;
       margin: 0 auto;
-      background: linear-gradient(145deg, {{ $('Global Constants').item.json.constants.CONTAINER_BG_COLOR }} 0%, {{ $('Global Constants').item.json.constants.HERO_BG_COLOR }} 100%);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px {{ $('Global Constants').item.json.constants.SHADOW_COLOR }};
-      border: 1px solid rgba(245, 158, 11, 0.1);
+
+      background: linear-gradient(145deg, {
+          {
+          $('Global Constants').item.json.constants.CONTAINER_BG_COLOR
+        }
+      }
+
+      0%, {
+        {
+        $('Global Constants').item.json.constants.HERO_BG_COLOR
+      }
+    }
+
+    100%);
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 20px 40px {
+        {
+        $('Global Constants').item.json.constants.SHADOW_COLOR
+      }
+    }
+
+    ;
+    border: 1px solid rgba(245, 158, 11, 0.1);
     }
 
     .header {
       padding: 25px 25px 15px;
       text-align: center;
-      background-color: {{ $('Global Constants').item.json.constants.HEADER_BG_COLOR }};
+
+      background-color: {
+          {
+          $('Global Constants').item.json.constants.HEADER_BG_COLOR
+        }
+      }
+
+      ;
     }
 
     .logo {
@@ -51,10 +84,29 @@
       text-align: center;
       padding: 15px 0 25px;
       letter-spacing: 4px;
-      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 0%, {{ $('Global Constants').item.json.constants.LABEL_COLOR }} 50%, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+
+      background: linear-gradient(135deg, {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      0%, {
+        {
+        $('Global Constants').item.json.constants.LABEL_COLOR
+      }
+    }
+
+    50%, {
+      {
+      $('Global Constants').item.json.constants.ACCENT_COLOR
+    }
+    }
+
+    100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     }
 
     .content {
@@ -71,9 +123,31 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
+    .user-greeting {
+      font-size: 18px;
+      font-weight: 600;
+
+      color: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
     .success-message {
       font-size: 16px;
-      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+
+      color: {
+          {
+          $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR
+        }
+      }
+
+      ;
       margin-bottom: 35px;
       line-height: 1.6;
       max-width: 420px;
@@ -84,7 +158,14 @@
     .section-header {
       font-size: 16px;
       font-weight: 700;
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+
+      color: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       margin-bottom: 15px;
@@ -94,96 +175,84 @@
 
     .info-text {
       font-size: 14px;
-      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+
+      color: {
+          {
+          $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR
+        }
+      }
+
+      ;
       line-height: 1.8;
       text-align: left;
       margin-bottom: 35px;
     }
 
     .highlight {
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      color: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
       font-weight: 600;
     }
 
-    .credentials-header {
-      font-size: 16px;
-      font-weight: 700;
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 15px;
-      text-align: left;
-      text-shadow: 0 1px 3px rgba(245, 158, 11, 0.3);
-    }
-
-    .credentials-text {
-      font-size: 14px;
-      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
-      line-height: 1.8;
-      text-align: left;
-      margin-bottom: 30px;
-    }
-
-    .action-button {
-      display: inline-block;
-      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 0%, {{ $('Global Constants').item.json.constants.LABEL_COLOR }} 100%);
-      color: white;
-      text-decoration: none;
-      padding: 16px 45px;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 700;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      letter-spacing: 1px;
-      position: relative;
-      overflow: hidden;
-      text-transform: uppercase;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
-    }
-
-    .action-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-      transition: left 0.6s ease-in-out;
-    }
-
-    .action-button:hover::before {
-      left: 100%;
-    }
-
-    .action-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
-    }
-
-    .celebration-banner {
+    .verification-banner {
       padding: 15px 0;
       margin-bottom: 20px;
       text-align: center;
     }
 
-    .celebration-banner svg {
+    .verification-banner svg {
       width: 50px;
       height: 50px;
-      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+
+      fill: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
       margin-bottom: 10px;
     }
 
     .footer {
-      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.FOOTER_BG_COLOR }} 0%, {{ $('Global Constants').item.json.constants.HEADER_BG_COLOR }} 100%);
-      padding: 25px;
-      text-align: center;
-      border-top: 1px solid {{ $('Global Constants').item.json.constants.BORDER_COLOR }};
+      background: linear-gradient(135deg, {
+          {
+          $('Global Constants').item.json.constants.FOOTER_BG_COLOR
+        }
+      }
+
+      0%, {
+        {
+        $('Global Constants').item.json.constants.HEADER_BG_COLOR
+      }
+    }
+
+    100%);
+    padding: 25px;
+    text-align: center;
+
+    border-top: 1px solid {
+        {
+        $('Global Constants').item.json.constants.BORDER_COLOR
+      }
+    }
+
+    ;
     }
 
     .footer-text {
-      color: {{ $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR }};
+      color: {
+          {
+          $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR
+        }
+      }
+
+      ;
       font-size: 12px;
       margin-bottom: 8px;
       line-height: 1.5;
@@ -201,7 +270,14 @@
     .social-icons svg {
       width: 24px;
       height: 24px;
-      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+
+      fill: {
+          {
+          $('Global Constants').item.json.constants.ACCENT_COLOR
+        }
+      }
+
+      ;
     }
 
     @media (max-width: 600px) {
@@ -223,14 +299,12 @@
         max-width: 320px;
       }
 
-      .info-text,
-      .credentials-text {
+      .info-text {
         font-size: 13px;
       }
 
-      .action-button {
-        padding: 14px 35px;
-        font-size: 14px;
+      .user-greeting {
+        font-size: 16px;
       }
     }
   </style>
@@ -239,38 +313,34 @@
 <body>
   <div class="email-container">
     <div class="header">
-      <img src="{{ $('Global Constants').item.json.constants.LOGO_URL }}" alt="{{ $('Global Constants').item.json.constants.COMPANY_NAME }} Logo" class="logo">
+      <img src="{{ $('Global Constants').item.json.constants.LOGO_URL }}"
+        alt="{{ $('Global Constants').item.json.constants.COMPANY_NAME }} Logo" class="logo">
       <div class="company-name">{{ $('Global Constants').item.json.constants.COMPANY_NAME }}</div>
     </div>
 
     <div class="content">
-      <div class="celebration-banner">
+      <div class="verification-banner">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
             clip-rule="evenodd" />
         </svg>
       </div>
-      
-      <p class="success-message">
-        You've successfully completed the challenge. Your trading skills have been proven and you're now ready for the next step!
-      </p>
 
-      <div class="section-header">Challenge Details</div>
+      <div class="user-greeting">
+        Hola {{ $('Webhook').item.json.firstName }} {{ $('Webhook').item.json.lastName }}
+      </div>
+
+      <div class="section-header">Estado de Verificación</div>
       <div class="info-text">
-        Your <span class="highlight">{{ $('Webhook').item.json.challenge_type }}</span> challenge with account size <span class="highlight">${{ $('Webhook').item.json.account_size.toLocaleString() }}</span> has been successfully approved.<br><br>
-        Challenge ID <span class="highlight">{{ $('Webhook').item.json.challenge_id }}</span> achieved the profit target of <span class="highlight">${{ $('Webhook').item.json.profit_target.toLocaleString() }}</span>.
-      </div>
+        <!-- Mensaje para informar sobre la validación de documentos -->
+        Hemos recibido tus documentos y los estamos revisando para validar tu identidad.<br><br>
+        Los documentos están en proceso de <span class="highlight">verificación</span>, lo cual puede tardar entre <span
+          class="highlight">1 y 2 días hábiles</span>.<br><br>
+        Recibirás más instrucciones y el estado de tu validación tan pronto como se complete la revisión.<br><br>
+        <span class="highlight">Gracias por tu paciencia.</span>
 
-      <div class="credentials-header">Next Steps</div>
-      <div class="credentials-text">
-        Complete our trader verification process and submit your payment information for future payouts. You'll receive your funded account credentials within 24-48 hours to start trading on your new funded account.<br><br>
-        Your funded account will have an initial size of <span class="highlight">${{ $('Webhook').item.json.account_size.toLocaleString() }}</span> with a <span class="highlight">{{ $('Webhook').item.json.profit_split }}%</span> profit split and <span class="highlight">{{ $('Webhook').item.json.payout_frequency }}</span> payout frequency on the <span class="highlight">{{ $('Webhook').item.json.platform }}</span> platform.
       </div>
-
-      <a href="{{ $('Webhook').item.json.dashboard_url }}" target="_blank" class="action-button">
-        View Performance
-      </a>
     </div>
 
     <div class="footer">
@@ -296,14 +366,16 @@
           </svg>
         </a>
       </div>
-      <p class="footer-text">&copy; {{ new Date().getFullYear() }} {{ $('Global Constants').item.json.constants.COMPANY_NAME }}. All rights reserved.</p>
-      <p class="footer-text">{{ $('Global Constants').item.json.constants.COMPANY_ADDRESS }}</p>
+      <p class="footer-text">&copy; {{ new Date().getFullYear() }} {{ $('Global Constants').item.json.constants.COMPANY_NAME }}. All rights reserved.
+      </p>
+      
       <p class="footer-text">
         <a href="{{ $('Global Constants').item.json.constants.UNSUBSCRIBE_URL }}"
           style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Unsubscribe</a>
         |
         <a href="{{ $('Global Constants').item.json.constants.PRIVACY_URL }}"
-          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Privacy Policy</a>
+          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Privacy
+          Policy</a>
       </p>
     </div>
   </div>

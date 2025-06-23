@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ $('Webhook').item.json.email_subject }} - {{ $('Global Constants').item.json.constants.COMPANY_NAME}}</title>
+  <title>Withdrawal Request Received - {{ $('Global Constants').item.json.constants.COMPANY_NAME}}</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
@@ -62,46 +62,54 @@
       text-align: center;
     }
 
-    .greeting-title {
-      font-size: 24px;
+    .success-message {
+      font-size: 16px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      margin-bottom: 35px;
+      line-height: 1.6;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-header {
+      font-size: 16px;
       font-weight: 700;
       color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      margin-bottom: 25px;
-      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+      text-align: left;
       text-shadow: 0 1px 3px rgba(245, 158, 11, 0.3);
     }
 
-    .message-text {
-      font-size: 16px;
-      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
-      margin-bottom: 20px;
-      line-height: 1.7;
-      text-align: center;
-    }
-
-    .verification-section {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
-      border: 2px dashed {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      border-radius: 15px;
-      padding: 25px;
-      margin: 30px 0;
-      text-align: center;
-    }
-
-    .verification-prompt {
+    .info-text {
       font-size: 14px;
       color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
-      margin-bottom: 15px;
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 35px;
     }
 
-    .verification-code {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: 6px;
+    .highlight {
       color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      margin: 15px 0;
-      text-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
-      font-family: 'Courier New', monospace;
+      font-weight: 600;
+    }
+
+    .withdrawal-text {
+      font-size: 14px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .steps-text {
+      font-size: 14px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 30px;
     }
 
     .action-button {
@@ -120,7 +128,7 @@
       text-transform: uppercase;
       border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
-      margin: 25px 0;
+      margin: 10px 5px;
     }
 
     .action-button::before {
@@ -143,20 +151,17 @@
       box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
     }
 
-    .note-section {
-      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.FOOTER_BG_COLOR }} 0%, rgba(45, 55, 72, 0.8) 100%);
-      border: 1px solid {{ $('Global Constants').item.json.constants.BORDER_COLOR }};
-      border-radius: 12px;
-      padding: 20px;
-      margin: 30px 0 0;
+    .celebration-banner {
+      padding: 15px 0;
+      margin-bottom: 20px;
       text-align: center;
     }
 
-    .note-text {
-      font-size: 14px;
-      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
-      font-style: italic;
-      line-height: 1.6;
+    .celebration-banner svg {
+      width: 50px;
+      height: 50px;
+      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      margin-bottom: 10px;
     }
 
     .footer {
@@ -203,26 +208,16 @@
         font-size: 20px;
       }
 
-      .greeting-title {
-        font-size: 20px;
-      }
-
-      .message-text {
-        font-size: 15px;
-      }
-
-      .verification-code {
-        font-size: 24px;
-        letter-spacing: 4px;
+      .info-text,
+      .withdrawal-text,
+      .steps-text {
+        font-size: 13px;
       }
 
       .action-button {
         padding: 14px 35px;
         font-size: 14px;
-      }
-
-      .note-text {
-        font-size: 13px;
+        margin: 8px 3px;
       }
     }
   </style>
@@ -236,31 +231,50 @@
     </div>
 
     <div class="content">
-      <h1 class="greeting-title">{{ $('Webhook').item.json.greeting }}</h1>
-
-      <p class="message-text">{{ $('Webhook').item.json.intro_message }}</p>
-      <p class="message-text">{{ $('Webhook').item.json.main_message }}</p>
-
-      <a href="{{ $('Webhook').item.json.action_url }}" class="action-button">{{ $('Webhook').item.json.button_text }}</a>
-
-      {{#if $('Webhook').item.json.show_verification_code}}
-      <div class="verification-section">
-        <div class="verification-prompt">Or enter this verification code:</div>
-        <div class="verification-code">{{ $('Webhook').item.json.verification_code }}</div>
+      <div class="celebration-banner">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+        </svg>
       </div>
-      {{/if}}
+      
+      <p class="success-message">
+        We have successfully received your withdrawal request. Our team is processing your request and you'll receive your funds soon.
+      </p>
 
-      <p class="message-text">{{ $('Webhook').item.json.closing_message }}</p>
-
-      <div class="note-section">
-        <div class="note-text">
-          {{#if $('Webhook').item.json.expiry_time}}
-          This link will expire in {{ $('Webhook').item.json.expiry_time }}. If the link has expired, you can request a new one from the login page.
-          {{else}}
-          If you did not request this action, please ignore this email or contact our support team.
-          {{/if}}
-        </div>
+      <div class="section-header">Withdrawal Details</div>
+      <div class="withdrawal-text">
+        Your withdrawal request has been successfully submitted! We've received your request for <span class="highlight">${{ $('Webhook').item.json.withdraw.toLocaleString() }}</span> from trader <span class="highlight">{{ $('Webhook').item.json.user }}</span>.<br><br>
+        <strong>Withdrawal ID:</strong> <span class="highlight">{{ $('Webhook').item.json.id }}</span><br>
+        <strong>Challenge ID:</strong> <span class="highlight">{{ $('Webhook').item.json.challengeid }}</span><br>
+        <strong>Request Date:</strong> <span class="highlight">{{ new Date($('Webhook').item.json.startdate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span><br>
+        <strong>Current Status:</strong> <span class="highlight">{{ $('Webhook').item.json.phase }}</span>
       </div>
+
+      <div class="section-header">Next Steps</div>
+      <div class="steps-text">
+        1. Our team will review your withdrawal request.<br>
+        2. We'll verify your account and trading history.<br>
+        3. Once approved, funds will be processed to your registered payment method.<br>
+        4. You'll receive confirmation once the transfer is complete.
+      </div>
+
+      <div class="section-header">Track Your Request</div>
+      <div class="info-text">
+        You can monitor the status of your withdrawal request at any time through your dashboard. We'll also send you email updates as your request progresses through our verification process.
+      </div>
+
+      <a href="{{ $('Global Constants').item.json.constants.WEBAPP_URL }}" target="_blank" class="action-button">
+        View Dashboard
+      </a>
+
+      <div class="section-header">Need Help?</div>
+      <div class="info-text">
+        If you have any questions about your withdrawal or need assistance, our support team is ready to help you.
+      </div>
+
+      <a href="{{ $('Global Constants').item.json.constants.SUPPORT_URL }}" target="_blank" class="action-button">
+        Contact Support
+      </a>
     </div>
 
     <div class="footer">
@@ -288,6 +302,13 @@
       </div>
       <p class="footer-text">&copy; {{ new Date().getFullYear() }} {{ $('Global Constants').item.json.constants.COMPANY_NAME }}. All rights reserved.</p>
       <p class="footer-text">{{ $('Global Constants').item.json.constants.COMPANY_ADDRESS }}</p>
+      <p class="footer-text">
+        <a href="{{ $('Global Constants').item.json.constants.UNSUBSCRIBE_URL }}"
+          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Unsubscribe</a>
+        |
+        <a href="{{ $('Global Constants').item.json.constants.PRIVACY_URL }}"
+          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Privacy Policy</a>
+      </p>
     </div>
   </div>
 </body>

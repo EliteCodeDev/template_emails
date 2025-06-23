@@ -6,179 +6,200 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Challenge Not Approved Notice - {{ $('Global Constants').item.json.constants.COMPANY_NAME}}</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     body {
       background-color: {{ $('Global Constants').item.json.constants.EMAIL_BG_COLOR }};
-      padding: 40px 20px;
+      padding: 20px;
+      line-height: 1.6;
     }
 
     .email-container {
-      max-width: 650px;
+      max-width: 500px;
       margin: 0 auto;
-      background: {{ $('Global Constants').item.json.constants.CONTAINER_BG_COLOR }};
-      border-radius: 16px;
+      background: linear-gradient(145deg, {{ $('Global Constants').item.json.constants.CONTAINER_BG_COLOR }} 0%, {{ $('Global Constants').item.json.constants.HERO_BG_COLOR }} 100%);
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 12px 30px {{ $('Global Constants').item.json.constants.SHADOW_COLOR }};
+      box-shadow: 0 20px 40px {{ $('Global Constants').item.json.constants.SHADOW_COLOR }};
+      border: 1px solid rgba(245, 158, 11, 0.1);
     }
 
-    .top-header {
+    .header {
+      padding: 25px 25px 15px;
+      text-align: center;
       background-color: {{ $('Global Constants').item.json.constants.HEADER_BG_COLOR }};
-      padding: 15px 0;
-      text-align: center;
-      border-bottom: 1px solid {{ $('Global Constants').item.json.constants.BORDER_COLOR }};
     }
 
-    .top-header img {
-      max-width: 120px;
+    .logo {
+      max-width: 80px;
       height: auto;
+      opacity: 0.95;
+      filter: brightness(1.2);
     }
 
-    .hero-section {
-      background-color: {{ $('Global Constants').item.json.constants.HERO_BG_COLOR }};
-      padding: 30px 20px;
+    .company-name {
+      font-size: 28px;
+      font-weight: 800;
+      color: transparent;
       text-align: center;
-      color: white;
-    }
-
-    .hero-section h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      font-weight: 700;
-    }
-
-    .hero-section p {
-      font-size: 15px;
-      line-height: 1.5;
-      max-width: 450px;
-      margin: 0 auto;
-      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      padding: 15px 0 25px;
+      letter-spacing: 4px;
+      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 0%, {{ $('Global Constants').item.json.constants.LABEL_COLOR }} 50%, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .content {
-      padding: 30px 25px;
-      position: relative;
-    }
-
-    .notification-icon {
+      padding: 0 30px 35px;
       text-align: center;
-      margin-bottom: 15px;
     }
 
-    .notification-icon svg {
-      width: 40px;
-      height: 40px;
-      fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+    .notice-message {
+      font-size: 16px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      margin-bottom: 35px;
+      line-height: 1.6;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .notification-card {
-      position: relative;
-      z-index: 1;
-      background: {{ $('Global Constants').item.json.constants.CARD_BG_COLOR }};
-      border-radius: 10px;
-      padding: 25px 20px;
-      margin-bottom: 25px;
-      border: 1px solid {{ $('Global Constants').item.json.constants.CARD_BORDER_COLOR }};
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    }
-
-    .notification-card h2 {
-      color: white;
-      font-size: 20px;
-      margin-bottom: 15px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid {{ $('Global Constants').item.json.constants.DIVIDER_COLOR }};
-      text-align: center;
-    }    .notification-message {
-      color: white;
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    .info-item {
-      display: flex;
-      align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(100, 150, 255, 0.1);
-    }
-
-    .info-item:last-child {
-      border-bottom: none;
-    }
-
-    .info-label {
+    .section-header {
+      font-size: 16px;
+      font-weight: 700;
       color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      font-weight: 500;
-      font-size: 14px;
-      width: 40%;
-      padding-right: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+      text-align: left;
+      text-shadow: 0 1px 3px rgba(245, 158, 11, 0.3);
     }
 
-    .info-value {
-      color: white;
+    .info-text {
+      font-size: 14px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 35px;
+    }
+
+    .highlight {
+      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
       font-weight: 600;
-      font-size: 15px;
-      background-color: rgba(100, 150, 255, 0.1);
-      padding: 8px 12px;
-      border-radius: 4px;
-      border: 1px solid rgba(100, 150, 255, 0.2);
-      word-break: break-word;
-      width: 60%;
-      flex-grow: 1;
     }
 
-    .info-row {
-      margin-bottom: 20px;
+    .violation-text {
       font-size: 14px;
-      color: #e5e7eb;
-      display: flex;
-      flex-direction: column;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      line-height: 1.8;
+      text-align: left;
+      margin-bottom: 30px;
     }
 
-    .info-row strong {
-      display: block;
-      margin-bottom: 5px;
-      color: {{ $('Global Constants').item.json.constants.LABEL_COLOR }};
+    .coupon-section {
+      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.HIGHLIGHT_BG_COLOR }} 0%, rgba(245, 158, 11, 0.1) 100%);
+      border: 2px dashed {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      border-radius: 15px;
+      padding: 25px;
+      margin: 30px 0;
+      text-align: center;
     }
 
-    .cta-button {
+    .coupon-code {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      margin: 15px 0;
+      text-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+    }
+
+    .coupon-info {
+      font-size: 14px;
+      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
+      margin: 8px 0;
+    }
+
+    .discount-highlight {
+      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 0%, {{ $('Global Constants').item.json.constants.LABEL_COLOR }} 100%);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .action-button {
       display: inline-block;
-      background-color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
+      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.ACCENT_COLOR }} 0%, {{ $('Global Constants').item.json.constants.LABEL_COLOR }} 100%);
       color: white;
       text-decoration: none;
-      padding: 12px 35px;
-      border-radius: 8px;
-      font-weight: 600;
+      padding: 16px 45px;
+      border-radius: 12px;
       font-size: 15px;
-      margin-top: 20px;
-      transition: transform 0.2s;
+      font-weight: 700;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+      margin: 10px 5px;
     }
 
-    .cta-button:hover {
-      transform: translateY(-2px);
+    .action-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transition: left 0.6s ease-in-out;
+    }
+
+    .action-button:hover::before {
+      left: 100%;
+    }
+
+    .action-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+    }
+
+    .warning-banner {
+      padding: 15px 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .warning-banner svg {
+      width: 50px;
+      height: 50px;
+      fill: #f59e0b;
+      margin-bottom: 10px;
     }
 
     .footer {
-      background-color: {{ $('Global Constants').item.json.constants.FOOTER_BG_COLOR }};
-      padding: 25px 20px;
+      background: linear-gradient(135deg, {{ $('Global Constants').item.json.constants.FOOTER_BG_COLOR }} 0%, {{ $('Global Constants').item.json.constants.HEADER_BG_COLOR }} 100%);
+      padding: 25px;
       text-align: center;
-      color: {{ $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR }};
-      font-size: 13px;
       border-top: 1px solid {{ $('Global Constants').item.json.constants.BORDER_COLOR }};
     }
 
-    .footer p {
-      margin-bottom: 10px;
+    .footer-text {
+      color: {{ $('Global Constants').item.json.constants.FOOTER_TEXT_COLOR }};
+      font-size: 12px;
+      margin-bottom: 8px;
+      line-height: 1.5;
     }
 
     .social-icons {
@@ -196,88 +217,34 @@
       fill: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
     }
 
-    .reasons-section {
-      background-color: {{ $('Global Constants').item.json.constants.HIGHLIGHT_BG_COLOR }};
-      border-left: 4px solid {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      padding: 15px;
-      margin: 20px 0;
-      text-align: left;
-      border-radius: 4px;
-    }
+    @media (max-width: 600px) {
+      .email-container {
+        margin: 0 10px;
+        max-width: calc(100vw - 20px);
+        border-radius: 16px;
+      }
 
-    .reasons-section h3 {
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
+      .content {
+        padding: 0 20px 30px;
+      }
 
-    .reasons-section ul {
-      padding-left: 20px;
-      color: #e5e7eb;
-    }
-
-    .reasons-section li {
-      margin-bottom: 8px;
-    }
-
-    .coupon {
-      background-color: {{ $('Global Constants').item.json.constants.HIGHLIGHT_BG_COLOR }};
-      border: 2px dashed {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      border-radius: 8px;
-      padding: 15px;
-      margin: 25px auto;
-      max-width: 80%;
-      text-align: center;
-    }
-
-    .coupon-code {
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }};
-      margin: 10px 0;
-    }
-
-    .coupon-info {
-      font-size: 16px;
-      margin: 8px 0;
-      color: {{ $('Global Constants').item.json.constants.SECONDARY_TEXT_COLOR }};
-    }
-
-    .highlight {
-      background-color: {{ $('Global Constants').item.json.constants.HIGHLIGHT_COLOR }};
-      padding: 2px 5px;
-      border-radius: 3px;
-    }    @media only screen and (max-width: 500px) {
-      .hero-section h1 {
+      .company-name {
         font-size: 20px;
       }
 
-      .hero-section p {
+      .info-text,
+      .violation-text {
+        font-size: 13px;
+      }
+
+      .action-button {
+        padding: 14px 35px;
         font-size: 14px;
+        margin: 8px 3px;
       }
 
-      .notification-card h2 {
-        font-size: 18px;
-      }
-
-      .info-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .info-label {
-        width: 100%;
-        margin-bottom: 6px;
-      }
-
-      .info-value {
-        width: 100%;
-      }
-
-      .cta-button {
-        padding: 10px 25px;
-        font-size: 14px;
+      .coupon-code {
+        font-size: 22px;
       }
     }
   </style>
@@ -285,83 +252,61 @@
 
 <body>
   <div class="email-container">
-    <div class="top-header">
-      <img src="{{ $('Global Constants').item.json.constants.LOGO_URL}}"
-        alt="{{ $('Global Constants').item.json.constants.COMPANY_NAME}} Logo">
+    <div class="header">
+      <img src="{{ $('Global Constants').item.json.constants.LOGO_URL }}" alt="{{ $('Global Constants').item.json.constants.COMPANY_NAME }} Logo" class="logo">
+      <div class="company-name">{{ $('Global Constants').item.json.constants.COMPANY_NAME }}</div>
     </div>
 
-    <div class="hero-section">
-      <h1>Challenge Not Approved</h1>
-      <p>We've reviewed your trading challenge and found that some rules were violated. Don't worry, you can try again!
+    <div class="content">
+      <div class="warning-banner">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+        </svg>
+      </div>
+      
+      <p class="notice-message">
+        We've reviewed your trading challenge and found that some rules were violated. Don't worry, you can try again!
       </p>
-    </div>
 
-    <div class="content">      <div class="notification-card">
-        <h2>Challenge Details</h2>
-
-        <div class="notification-message">
-          <p>Details of the challenge that was not approved.</p>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Challenge Type</span>
-          <span class="info-value">{{ $('Webhook').item.json.challenge_type }}</span>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Account Size</span>
-          <span class="info-value">${{ $('Webhook').item.json.account_size.toLocaleString() }}</span>
-        </div>
-
-        <div class="info-item">
-          <span class="info-label">Challenge ID</span>
-          <span class="info-value">{{ $('Webhook').item.json.challenge_id }}</span>
-        </div>
+      <div class="section-header">Challenge Details</div>
+      <div class="info-text">
+        Your <span class="highlight">{{ $('Webhook').item.json.challenge_type }}</span> challenge with account size <span class="highlight">${{ $('Webhook').item.json.account_size.toLocaleString() }}</span> (ID: <span class="highlight">{{ $('Webhook').item.json.challenge_id }}</span>) has not been approved due to rule violations.
       </div>
 
-      <div class="notification-card">
-        <h2>Reason for Disapproval</h2>
-
-        <div class="reasons-section">
-          <h3>Rules Violated:</h3>
-          <ul>
-          {{ $('Code').item.json.violated_rules_html }}
-          </ul>
-        </div>        <div class="notification-message">
-          <p>We understand that challenges can be difficult, but we need to ensure all traders follow the established
-            rules.</p>
-          <p style="margin-top: 10px;">You can review your performance metrics and the detailed breakdown of rule
-            violations in your dashboard.</p>
-        </div>
-        <div style="text-align: center;">
-          <a href="{{ $('Global Constants').item.json.constants.WEBAPP_URL }}" class="cta-button">View Performance</a>
-        </div>
-      </div>      <div class="notification-card">
-        <h2>Try Again with a Discount</h2>
-
-        <div class="notification-message">
-          <p>We'd like to offer you a special discount on your next challenge attempt!</p>
-        </div>
-        <div class="coupon">
-          <div class="coupon-info">Use this code at checkout</div>
-          <div class="coupon-code">{{ $('Webhook').item.json.discount_code }}</div>
-          <div class="coupon-info">for <span class="highlight">{{ $('Webhook').item.json.discount_percentage }}%
-              OFF</span> your next challenge</div>
-        </div>
-
-        <div style="text-align: center;">
-          <a href="{{ $('Webhook').item.json.new_challenge_url }}" class="cta-button">Start New Challenge</a>
-        </div>
-      </div>      <div class="notification-card">
-        <h2>Need Help?</h2>
-        <div class="notification-message">
-          <p>Our team is available to provide guidance and answer any questions you might have about the challenge
-            rules.</p>
-        </div>
-        <div style="text-align: center;">
-          <a href="{{ $('Global Constants').item.json.constants.SUPPORT_URL }}" class="cta-button">Contact Support</a>
-        </div>
+      <div class="section-header">Reason for Disapproval</div>
+      <div class="violation-text">
+        <strong>Rules Violated:</strong><br>
+        {{ $('Webhook').item.json.violated_rules.map(rule => `• ${rule}`).join('<br>') }}<br><br>
+        We understand that challenges can be difficult, but we need to ensure all traders follow the established rules. You can review your performance metrics and the detailed breakdown of rule violations in your dashboard.
       </div>
+
+      <a href="{{ $('Webhook').item.json.dashboard_url }}" target="_blank" class="action-button">
+        View Performance
+      </a>
+
+      <div class="section-header">Try Again with a Discount</div>
+      <div class="info-text">
+        We'd like to offer you a special discount on your next challenge attempt!
+      </div>
+
+      <div class="coupon-section">
+        <div class="coupon-info">Use this code at checkout</div>
+        <div class="coupon-code">{{ $('Webhook').item.json.discount_code }}</div>
+        <div class="coupon-info">for <span class="discount-highlight">{{ $('Webhook').item.json.discount_percentage }}% OFF</span> your next challenge</div>
+      </div>
+
+      <a href="{{ $('Webhook').item.json.new_challenge_url }}" target="_blank" class="action-button">
+        Start New Challenge
+      </a>
+
+      <div class="section-header">Need Help?</div>
+      <div class="info-text">
+        Our team is available to provide guidance and answer any questions you might have about the challenge rules.
+      </div>
+
+      <a href="{{ $('Global Constants').item.json.constants.SUPPORT_URL }}" target="_blank" class="action-button">
+        Contact Support
+      </a>
     </div>
 
     <div class="footer">
@@ -387,16 +332,14 @@
           </svg>
         </a>
       </div>
-      <p>&copy; {{ new Date().getFullYear() }} {{ $('Global Constants').item.json.constants.COMPANY_NAME }}. All rights
-        reserved.</p>
-      <p>{{ $('Global Constants').item.json.constants.COMPANY_ADDRESS }}</p>
-      <p>
+      <p class="footer-text">&copy; {{ new Date().getFullYear() }} {{ $('Global Constants').item.json.constants.COMPANY_NAME }}. All rights reserved.</p>
+      <p class="footer-text">{{ $('Global Constants').item.json.constants.COMPANY_ADDRESS }}</p>
+      <p class="footer-text">
         <a href="{{ $('Global Constants').item.json.constants.UNSUBSCRIBE_URL }}"
           style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Unsubscribe</a>
         |
         <a href="{{ $('Global Constants').item.json.constants.PRIVACY_URL }}"
-          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Privacy
-          Policy</a>
+          style="color: {{ $('Global Constants').item.json.constants.ACCENT_COLOR }}; text-decoration: none;">Privacy Policy</a>
       </p>
     </div>
   </div>
